@@ -138,7 +138,8 @@
     <string name="what_phone">What is your phone number ?</string>
     <string name="what_phone_text">Input your phone number to help us in contacting you.</string>
     <string name="what_email">What is your email ?</string>
-    <string name="what_email_text">Your email data will help us to send you the important information.</string>
+    <string name="what_email_text">Your email data will help us to send you the important
+        information.</string>
     <string name="what_password">What is your password ?</string>
     <string name="what_password_text">Input your account password (min 6 characters)</string>
     <string name="what_username">What is your username ?</string>
@@ -146,7 +147,8 @@
     <string name="what_prop">What kind of property ?</string>
     <string name="what_prop_text">Please state to us the property do you want to build or renovate.</string>
     <string name="who_supply">Who will supply the material ?</string>
-    <string name="who_supply_text">Please state to us the one who will supply the material for this project.</string>
+    <string name="who_supply_text">Please state to us the one who will supply the material for this
+        project.</string>
     <string name="where_address">Where is your address ?</string>
     <string name="where_address_text">Please state your address where you live.</string>
     <string name="fill_your_email">Input your email..</string>
@@ -444,8 +446,8 @@
     <string name="NoStorageAvailable">No Storage Available !</string>
     <string name="no_data">No Data Found</string>
     <string name="GPSAlertDialogMessage">Please turn on the GPS settings first.</string>
-    <string name="GPSAlertDialogTitle">GPS Settings</string>
-    <string name="action_settings">Settings</string>
+    <string name="GPSAlertDialogTitle">GPS AppSettings</string>
+    <string name="action_settings">AppSettings</string>
     <string name="your_current_location">Your Current Location</string>
     <string name="choosen_location">Choosen Location</string>
     <string name="no_internet_connection">Network Connection Problem</string>
@@ -495,7 +497,8 @@
     <string name="forgot_pass">Forgot Password</string>
     <string name="qr_scanner">QR Code Scanner</string>
     <string name="forgot_quest">What is your username or email ?</string>
-    <string name="forgot_quest_text">Please tell us your username or email help us to identify your account.</string>
+    <string name="forgot_quest_text">Please tell us your username or email help us to identify your
+        account.</string>
     <string name="search_acc">Look for your account</string>
     <string name="confirm_acc">Account Confirmation</string>
     <string name="jenis_kertas">Jenis Kertas</string>
