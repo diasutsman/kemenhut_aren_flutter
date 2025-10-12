@@ -84,6 +84,7 @@ dependencies:
   package_info_plus: ^8.1.1
   easy_localization: ^3.0.7
   easy_localization_loader: ^2.0.2
+  webview_flutter: ^4.13.0
 
 dev_dependencies:
   flutter_test:

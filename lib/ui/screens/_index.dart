@@ -5,4 +5,4 @@ export 'main/_index.dart';
 export 'forgot/_index.dart';
 export 'profile/_index.dart';
 export 'account/_index.dart';
-
+export 'about/_index.dart';

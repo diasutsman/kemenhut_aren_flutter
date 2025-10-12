@@ -36,7 +36,7 @@ class ProfileController extends GetxController {
   }
 
   void gotoAbout() {
-    Get.snackbar('Navigate', 'Opening About Kementerian Kehutanan RI...');
+    Get.toNamed(AppRoutes.about);
   }
 
   void gotoTerms() {
