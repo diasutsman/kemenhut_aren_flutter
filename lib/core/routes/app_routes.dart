@@ -35,4 +35,9 @@ List<GetPage> pageRoutes = [
     page: () => const ForgotScreen(),
     transition: Transition.fadeIn,
   ),
+  GetPage(
+    name: AppRoutes.account,
+    page: () => const AccountScreen(),
+    transition: Transition.fadeIn,
+  ),
 ];

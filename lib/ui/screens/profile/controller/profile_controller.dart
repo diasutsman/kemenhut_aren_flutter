@@ -40,7 +40,8 @@ class ProfileController extends GetxController {
   }
 
   /// Simulate navigation (replace with Get.toNamed if using routing)
-  void gotoAccount() => Get.snackbar('Navigate', 'Opening Account Page...');
+  void gotoAccount() => Get.toNamed(AppRoutes.account);
+
   void gotoInvHist() => Get.snackbar('Navigate', 'Opening My Report Page...');
   void gotoPerformance() =>
       Get.snackbar('Navigate', 'Opening Performance Page...');
@@ -53,12 +54,15 @@ class ProfileController extends GetxController {
     if (hasSession.value && userPhoto.value.isNotEmpty) {
       Get.defaultDialog(
         title: "My Image",
-        content: Image.network(userPhoto.value,
-            errorBuilder: (ctx, err, _) => Image.asset(
-                  'assets/drawable/default_user_icon.png',
-                  width: 100,
-                  height: 100,
-                )),
+        content: Image.network(
+          userPhoto.value,
+          errorBuilder:
+              (ctx, err, _) => Image.asset(
+                'assets/drawable/default_user_icon.png',
+                width: 100,
+                height: 100,
+              ),
+        ),
       );
     }
   }
