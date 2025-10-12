@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_splashscreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight"
+    tools:context="com.jayapack.wip.aren.SplashscreenActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:src="@drawable/rounded_logo"
+            android:layout_gravity="center_horizontal" />
+
+        <!-- <ImageView
+            android:layout_width="210dp"
+            android:layout_height="50dp"
+            android:src="@drawable/binloc"
+            android:layout_marginTop="@dimen/card_padding"
+            android:layout_gravity="center_horizontal" /> -->
+
+        <!--<TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/card_padding"
+            android:textSize="@dimen/mega_font_size"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:gravity="center_horizontal"
+            android:text="@string/corp_name"/>-->
+
+        <!-- <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/label_font_size"
+            android:textStyle="bold"
+            android:textColor="@color/colorBrOrange"
+            android:gravity="center_horizontal"
+            android:text="@string/slogan_app"/> -->
+    </LinearLayout>
+</FrameLayout>

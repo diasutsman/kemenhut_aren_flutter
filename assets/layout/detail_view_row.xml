@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_set"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/small_padding"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="9"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:text="No."/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtNoSKU"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="18dp"
+                android:layout_weight="4"
+                android:paddingLeft="@dimen/small_padding"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:text="Nama Barang"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/txtKodeLot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/small_padding"
+                    android:textSize="@dimen/small_font_size"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="1"
+                    android:text="Kode Lot"/>
+                <TextView
+                    android:id="@+id/txtKodePallet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/small_padding"
+                    android:textSize="@dimen/small_font_size"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="Pallet : "/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtExpired"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:paddingLeft="@dimen/small_padding"
+                android:textSize="@dimen/small_font_size"
+                android:text="Expired"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtJmlKarton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:text="0.00"/>
+        <TextView
+            android:id="@+id/txtJmlPcs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:text="0.00"/>
+    </LinearLayout>
+</LinearLayout>

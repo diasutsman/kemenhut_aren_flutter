@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="com.jayapack.wip.aren.LoginActivity">
+
+    <include
+        layout="@layout/loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <include
+        layout="@layout/no_connectivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <LinearLayout
+        android:id="@+id/pnlFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/smaller_photo_size"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dont_have_account"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:id="@+id/btRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up"
+            android:textSize="@dimen/normal_size"
+            android:paddingLeft="@dimen/welcome_margin_top"
+            android:gravity="left"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="@color/selector_tap_link"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/frameLogin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/frame_height"
+            android:background="@drawable/bg_packaging">
+            <ImageView
+                android:layout_width="@dimen/logo_width"
+                android:layout_height="@dimen/logo_size"
+                android:padding="@dimen/small_padding"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_marginTop="@dimen/menu_btn_size"
+                android:src="@drawable/logo_pnp"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/pnlLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/login_margin"
+            android:layout_marginTop="@dimen/card_label_padding"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/txtUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/card_label_padding"
+                android:padding="@dimen/card_label_padding"
+                android:drawableLeft="@drawable/icon_email"
+                android:drawablePadding="@dimen/card_padding"
+                android:background="@drawable/text_border"
+                android:textCursorDrawable="@null"
+                android:hint="Username / Email.."/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/txtPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/card_label_padding"
+                    android:drawableLeft="@drawable/icon_lock"
+                    android:drawablePadding="@dimen/profile_margin_bottom"
+                    android:inputType="textPassword"
+                    android:fontFamily="Calibri"
+                    android:background="@drawable/text_border"
+                    android:textCursorDrawable="@null"
+                    android:padding="@dimen/card_label_padding"
+                    android:hint="Password.."/>
+
+                <TextView
+                    android:id="@+id/btForgot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Forgot ?"
+                    android:paddingBottom="@dimen/small_padding"
+                    android:textColor="@color/selector_tap_link"
+                    android:textStyle="bold"
+                    android:layout_gravity="right|center_vertical"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tiny_padding"
+                android:orientation="vertical">
+                <Button
+                    android:id="@+id/btSignIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_rounded_btn"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/lrg_font_size"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:text="@string/login"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/small_photo_size">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/colorDarkGray"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_in_with"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:textColor="@android:color/black" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/colorDarkGray"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

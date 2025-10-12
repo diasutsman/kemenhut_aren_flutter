@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameReceive"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jayapack.wip.aren.input.SalesActivity">
+
+    <include
+        layout="@layout/no_connectivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="@string/spk_no"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/txtSPKNo"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:editable="false"
+                            android:gravity="left"
+                            android:hint="No. SPK."
+                            android:padding="@dimen/card_padding"
+                            android:textSize="@dimen/tab_value_size" />
+
+                        <ImageButton
+                            android:id="@+id/btScanSPK"
+                            android:visibility="gone"
+                            android:layout_width="@dimen/btnbrowse_size"
+                            android:layout_height="@dimen/btnbrowse_size"
+                            android:background="@drawable/rounded_btn_press"
+                            android:padding="@dimen/button_margin"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_action_search" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="4"
+                            android:text="@string/order_info"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtOrderInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="2"
+                            android:fontFamily="Calibri"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/tab_value_size" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="4"
+                            android:text="@string/progress_name"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <pl.utkala.searchablespinner.SearchableSpinner
+                            android:id="@+id/cbProgress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="2"
+                            android:fontFamily="Calibri"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/tab_value_size"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="4"
+                            android:text="@string/executor"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <pl.utkala.searchablespinner.SearchableSpinner
+                            android:id="@+id/cbExecutor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="2"
+                            android:fontFamily="Calibri"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/tab_value_size"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="4"
+                            android:text="Operator"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <pl.utkala.searchablespinner.SearchableSpinner
+                            android:id="@+id/cbEmployee"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="2"
+                            android:fontFamily="Calibri"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/tab_value_size"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llPotong"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="4"
+                            android:text="@string/bentuk_potong"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <pl.utkala.searchablespinner.SearchableSpinner
+                            android:id="@+id/cbStrukan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="2"
+                            android:fontFamily="Calibri"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/tab_value_size"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="@string/report_date"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/txtTransDt"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:editable="false"
+                            android:gravity="left"
+                            android:hint="Pilih tanggal.."
+                            android:padding="@dimen/card_padding"
+                            android:textSize="@dimen/tab_value_size" />
+
+                        <ImageButton
+                            android:id="@+id/btChooseTransDt"
+                            android:layout_width="@dimen/btnbrowse_size"
+                            android:layout_height="@dimen/btnbrowse_size"
+                            android:background="@drawable/rounded_btn_press"
+                            android:padding="@dimen/button_margin"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_action_calendar_month"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal"
+                    android:id="@+id/rowMPP"
+                    android:visibility="gone"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="@string/mpp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtMPP"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:editable="false"
+                        android:gravity="left"
+                        android:hint="Masukkan Qty MPP.."
+                        android:inputType="number"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="@string/finish_num"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtFinishNum"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:editable="false"
+                        android:gravity="left"
+                        android:hint="Masukkan Qty Diselesaikan.."
+                        android:inputType="number"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="@string/broken_num"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtBrokenNum"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:editable="false"
+                        android:gravity="left"
+                        android:hint="Masukkan Qty Rusak.."
+                        android:inputType="number"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="@string/missing_num"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtMissingNum"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:editable="false"
+                        android:gravity="left"
+                        android:hint="Masukkan Qty Hilang.."
+                        android:inputType="number"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llFinalAdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_set"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/card_padding"
+                        android:paddingTop="@dimen/card_padding"
+                        android:paddingRight="@dimen/card_padding"
+                        android:paddingBottom="@dimen/tiny_margin">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="4"
+                            android:text="@string/pisau"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/cbPisau"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="2"
+                            android:fontFamily="Calibri"
+                            android:textColor="@android:color/black"
+                            android:entries="@array/check"
+                            android:textSize="@dimen/tab_value_size"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_set"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/card_padding"
+                        android:paddingTop="@dimen/card_padding"
+                        android:paddingRight="@dimen/card_padding"
+                        android:paddingBottom="@dimen/tiny_margin">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="4"
+                            android:text="@string/klise"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/cbKlise"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="2"
+                            android:fontFamily="Calibri"
+                            android:textColor="@android:color/black"
+                            android:entries="@array/check"
+                            android:textSize="@dimen/tab_value_size"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_set"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/card_padding"
+                        android:paddingTop="@dimen/card_padding"
+                        android:paddingRight="@dimen/card_padding"
+                        android:paddingBottom="@dimen/tiny_margin">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="4"
+                            android:text="@string/film"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/cbFilm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="2"
+                            android:fontFamily="Calibri"
+                            android:textColor="@android:color/black"
+                            android:entries="@array/check"
+                            android:textSize="@dimen/tab_value_size"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_set"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/card_padding"
+                        android:paddingTop="@dimen/card_padding"
+                        android:paddingRight="@dimen/card_padding"
+                        android:paddingBottom="@dimen/tiny_margin">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="4"
+                            android:text="@string/singleface"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/cbSingleface"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="2"
+                            android:fontFamily="Calibri"
+                            android:textColor="@android:color/black"
+                            android:entries="@array/check"
+                            android:textSize="@dimen/tab_value_size"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="2"
+                            android:text="@string/is_outsource"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <CheckBox
+                            android:id="@+id/chkOutsource"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llVendor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="4"
+                            android:text="@string/outsource_vendor"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <pl.utkala.searchablespinner.SearchableSpinner
+                            android:id="@+id/cbVendor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="2"
+                            android:fontFamily="Calibri"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/tab_value_size"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="@string/notes"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtNotes"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:editable="false"
+                        android:gravity="left"
+                        android:hint="Masukkan Catatan.."
+                        android:inputType="textMultiLine"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="2"
+                            android:text="@string/all_done"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <CheckBox
+                            android:id="@+id/chkAllDone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="@string/attachment"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/btUploadImg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/tiny_margin"
+                        android:background="@drawable/border_set"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/card_label_padding">
+
+                        <ImageButton
+                            android:layout_width="@dimen/btnattach_size"
+                            android:layout_height="@dimen/btnattach_size"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/rounded_btn"
+                            android:padding="@dimen/small_padding"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_action_add" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/card_padding"
+                            android:text="@string/add_attachment" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/card_padding"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/small_margin_bottom"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/imgPaid"
+                        android:layout_width="@dimen/attach_doc_size"
+                        android:layout_height="@dimen/attach_doc_size"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_action_picture_holo" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtAttachment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="1"
+                            android:padding="@dimen/card_padding"
+                            android:text="@string/add_attachment" />
+
+                        <ImageButton
+                            android:id="@+id/btRemove"
+                            android:layout_width="@dimen/btnattach_size"
+                            android:layout_height="@dimen/btnattach_size"
+                            android:layout_gravity="center_vertical|right"
+                            android:background="@drawable/rounded_remove"
+                            android:padding="@dimen/small_padding"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_action_cancel" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/pnlOperation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/user_box"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtTimers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorRed"
+                android:layout_marginLeft="@dimen/card_padding"
+                android:layout_marginTop="@dimen/card_label_padding"
+                android:layout_marginRight="@dimen/card_padding"
+                android:layout_marginBottom="@dimen/card_label_padding"
+                android:text="" />
+
+            <Button
+                android:id="@+id/btConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/card_padding"
+                android:layout_marginRight="@dimen/card_padding"
+                android:layout_marginBottom="@dimen/card_label_padding"
+                android:background="@drawable/rounded_green"
+                android:drawableLeft="@drawable/ic_action_edit_white"
+                android:paddingLeft="@dimen/card_padding"
+                android:paddingRight="@dimen/small_padding"
+                android:text="@string/save_data"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/lrg_font_size"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

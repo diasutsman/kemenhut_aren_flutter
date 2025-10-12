@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".input.ReportListActivity">
+
+    <include
+        layout="@layout/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <include
+        layout="@layout/no_connectivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <include
+        layout="@layout/loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/card_label_padding"
+            android:paddingLeft="@dimen/card_label_padding"
+            android:paddingTop="@dimen/small_padding_bottom"
+            android:paddingBottom="@dimen/small_padding_bottom"
+            android:layout_marginLeft="@dimen/small_padding"
+            android:layout_marginRight="@dimen/small_padding"
+            android:layout_marginTop="@dimen/small_padding_bottom"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/tab_value_size"
+                android:textColor="@android:color/black"
+                android:layout_gravity="center_vertical"
+                android:textStyle="bold"
+                android:text="@string/deadline" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/txtStartDt"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/card_padding"
+                    android:gravity="right"
+                    android:textSize="@dimen/medium_font_size"
+                    android:editable="false"
+                    android:hint="Start.."/>
+                <ImageButton
+                    android:id="@+id/btChooseStartDt"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/btnbrowse_size"
+                    android:padding="@dimen/tiny_padding"
+                    android:layout_weight="3"
+                    android:scaleType="fitCenter"
+                    android:background="@drawable/rounded_btn_press"
+                    android:src="@drawable/ic_action_calendar_month"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/txtEndDt"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/card_padding"
+                    android:gravity="right"
+                    android:textSize="@dimen/medium_font_size"
+                    android:editable="false"
+                    android:hint="End.."/>
+                <ImageButton
+                    android:id="@+id/btChooseEndDt"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/btnbrowse_size"
+                    android:layout_weight="3"
+                    android:padding="@dimen/tiny_padding"
+                    android:scaleType="fitCenter"
+                    android:background="@drawable/rounded_btn_press"
+                    android:src="@drawable/ic_action_calendar_month"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/small_padding"
+            android:paddingLeft="@dimen/card_label_padding"
+            android:paddingRight="@dimen/card_padding"
+            android:paddingBottom="@dimen/small_padding"
+            android:layout_marginLeft="@dimen/small_padding"
+            android:layout_marginRight="@dimen/small_padding"
+            android:background="@drawable/border_set"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="top"
+                    android:textStyle="bold"
+                    android:layout_weight="4"
+                    android:text="@string/spk_no"/>
+                <EditText
+                    android:id="@+id/txtSPKNo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:padding="@dimen/card_padding"
+                    android:textSize="@dimen/tab_value_size"
+                    android:gravity="left"
+                    android:hint="No. SPK."/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/small_padding"
+            android:paddingLeft="@dimen/card_label_padding"
+            android:paddingRight="@dimen/card_padding"
+            android:paddingBottom="@dimen/card_padding"
+            android:layout_marginLeft="@dimen/small_padding"
+            android:layout_marginRight="@dimen/small_padding"
+            android:background="@drawable/border_set"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="top"
+                    android:textStyle="bold"
+                    android:layout_weight="4"
+                    android:text="@string/process_name"/>
+                <pl.utkala.searchablespinner.SearchableSpinner
+                    android:id="@+id/cbProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:layout_weight="2"
+                    android:entries="@array/progress_data"
+                    android:textSize="@dimen/item_desc_size"
+                    android:layout_gravity="top"
+                    android:fontFamily="Calibri" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeTrans"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/small_padding"
+                    android:background="@color/colorGray"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+                        android:paddingLeft="@dimen/small_padding"
+                        android:textColor="@color/colorDarkOrange"
+                        android:textStyle="bold"
+                        android:text="@string/tgl_lapor"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+                        android:gravity="center"
+                        android:textColor="@color/colorDarkOrange"
+                        android:textStyle="bold"
+                        android:text="@string/progress_name"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+                        android:gravity="center"
+                        android:textColor="@color/colorDarkOrange"
+                        android:textStyle="bold"
+                        android:text="@string/fmb"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:gravity="center"
+                        android:textColor="@color/colorDarkOrange"
+                        android:textStyle="bold"
+                        android:text="@string/is_outsource2"/>
+                </LinearLayout>
+
+                <com.jayapack.wip.aren.classes.StatefulRecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical" />
+            </LinearLayout>
+
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+</FrameLayout>

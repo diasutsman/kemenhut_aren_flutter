@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/frameDialog"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/small_padding"
+            android:background="@color/colorLawnGreen"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:paddingLeft="@dimen/small_padding"
+                android:text="Progress Penyayatan"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/card_padding"
+            android:paddingLeft="@dimen/card_padding"
+            android:paddingRight="@dimen/card_padding"
+            android:paddingBottom="@dimen/tiny_margin"
+            android:background="@android:color/white"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:text="Tanggal"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/txtTanggal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:editable="false"
+                        android:gravity="left"
+                        android:hint="Pilih tanggal.."
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                    <ImageButton
+                        android:id="@+id/btChooseTransDt"
+                        android:layout_width="@dimen/btnbrowse_size"
+                        android:layout_height="@dimen/btnbrowse_size"
+                        android:background="@drawable/rounded_btn_press"
+                        android:padding="@dimen/button_margin"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_action_calendar_month" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/card_padding"
+            android:paddingLeft="@dimen/card_padding"
+            android:paddingRight="@dimen/card_padding"
+            android:paddingBottom="@dimen/tiny_margin"
+            android:background="@android:color/white"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="top"
+                    android:textStyle="bold"
+                    android:layout_weight="4"
+                    android:text="Diiris (mm)"/>
+                <EditText
+                    android:id="@+id/txtIrisan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/tab_value_size"
+                    android:inputType="number"
+                    android:text="0"
+                    android:paddingLeft="@dimen/button_padding_hor"
+                    android:layout_gravity="top"
+                    android:paddingTop="@dimen/mini_padding"
+                    android:fontFamily="Calibri"
+                    android:layout_weight="2" />
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/card_padding"
+            android:paddingLeft="@dimen/card_padding"
+            android:paddingRight="@dimen/card_padding"
+            android:paddingBottom="@dimen/tiny_margin"
+            android:background="@android:color/white"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="top"
+                    android:textStyle="bold"
+                    android:layout_weight="4"
+                    android:text="Lamanya penetesan"/>
+                <EditText
+                    android:id="@+id/txtLamaNira"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/tab_value_size"
+                    android:inputType="textMultiLine"
+                    android:paddingLeft="@dimen/button_padding_hor"
+                    android:layout_gravity="top"
+                    android:paddingTop="@dimen/mini_padding"
+                    android:fontFamily="Calibri"
+                    android:layout_weight="2" />
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/card_padding"
+            android:paddingLeft="@dimen/card_padding"
+            android:paddingRight="@dimen/card_padding"
+            android:paddingBottom="@dimen/tiny_margin"
+            android:background="@android:color/white"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="top"
+                    android:textStyle="bold"
+                    android:layout_weight="4"
+                    android:text="Sagu Keras"/>
+                <EditText
+                    android:id="@+id/txtTainaKete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/tab_value_size"
+                    android:inputType="textMultiLine"
+                    android:paddingLeft="@dimen/button_padding_hor"
+                    android:layout_gravity="top"
+                    android:paddingTop="@dimen/mini_padding"
+                    android:fontFamily="Calibri"
+                    android:layout_weight="2" />
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/card_padding"
+            android:paddingLeft="@dimen/card_padding"
+            android:paddingRight="@dimen/card_padding"
+            android:paddingBottom="@dimen/tiny_margin"
+            android:background="@android:color/white"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="top"
+                    android:textStyle="bold"
+                    android:layout_weight="4"
+                    android:text="Sagu Busa Cair"/>
+                <EditText
+                    android:id="@+id/txtTainaRara"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/tab_value_size"
+                    android:inputType="textMultiLine"
+                    android:paddingLeft="@dimen/button_padding_hor"
+                    android:layout_gravity="top"
+                    android:paddingTop="@dimen/mini_padding"
+                    android:fontFamily="Calibri"
+                    android:layout_weight="2" />
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/card_padding"
+            android:paddingLeft="@dimen/card_padding"
+            android:paddingRight="@dimen/card_padding"
+            android:paddingBottom="@dimen/tiny_margin"
+            android:background="@android:color/white"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="top"
+                    android:textStyle="bold"
+                    android:layout_weight="4"
+                    android:text="Bergabus"/>
+                <EditText
+                    android:id="@+id/txtSimewu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/tab_value_size"
+                    android:inputType="textMultiLine"
+                    android:paddingLeft="@dimen/button_padding_hor"
+                    android:layout_gravity="top"
+                    android:paddingTop="@dimen/mini_padding"
+                    android:fontFamily="Calibri"
+                    android:layout_weight="2" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

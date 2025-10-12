@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".input.ProgressDetailActivity">
+
+    <include
+        layout="@layout/no_connectivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="top"
+                            android:textStyle="bold"
+                            android:layout_weight="4"
+                            android:text="@string/spk_no"/>
+
+                        <TextView
+                            android:id="@+id/txtSPKNo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="top"
+                            android:textSize="@dimen/tab_value_size"
+                            android:fontFamily="Calibri"
+                            android:layout_weight="2" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:text="@string/order_name" />
+
+                    <TextView
+                        android:id="@+id/txtOrderInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/tab_value_size"
+                        android:fontFamily="Calibri"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:text="@string/nama_process" />
+
+                    <TextView
+                        android:id="@+id/txtProcessNm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/tab_value_size"
+                        android:fontFamily="Calibri"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llExecutor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="4"
+                            android:text="@string/executor"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <pl.utkala.searchablespinner.SearchableSpinner
+                            android:id="@+id/cbExecutor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="2"
+                            android:fontFamily="Calibri"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/tab_value_size"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtExecutorNm"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="top"
+                            android:textSize="@dimen/tab_value_size"
+                            android:fontFamily="Calibri"
+                            android:layout_weight="2" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llExecutor2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="4"
+                            android:text="@string/executor"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtExecutor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="2"
+                            android:fontFamily="Calibri"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/tab_value_size"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtExecutorNm"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="top"
+                            android:textSize="@dimen/tab_value_size"
+                            android:fontFamily="Calibri"
+                            android:layout_weight="2" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:text="@string/jml_order" />
+
+                    <TextView
+                        android:id="@+id/txtJmlOrder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/tab_value_size"
+                        android:fontFamily="Calibri"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:text="@string/jml_balance" />
+
+                    <TextView
+                        android:id="@+id/txtBalanceQty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/tab_value_size"
+                        android:fontFamily="Calibri"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:text="@string/jml_progress" />
+
+                    <TextView
+                        android:id="@+id/txtPendingQty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/tab_value_size"
+                        android:fontFamily="Calibri"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rowMPP"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:text="@string/jml_mpp" />
+
+                    <TextView
+                        android:id="@+id/txtMPP"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/tab_value_size"
+                        android:fontFamily="Calibri"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:text="@string/jml_done" />
+
+                    <TextView
+                        android:id="@+id/txtFinishQty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/tab_value_size"
+                        android:fontFamily="Calibri"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:text="@string/jml_rusak" />
+
+                    <TextView
+                        android:id="@+id/txtBrokenQty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/tab_value_size"
+                        android:fontFamily="Calibri"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:text="@string/jml_hilang" />
+
+                    <TextView
+                        android:id="@+id/txtMissingQty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/tab_value_size"
+                        android:fontFamily="Calibri"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:text="Mesin Cetak" />
+
+                    <TextView
+                        android:id="@+id/txtMachineNm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/tab_value_size"
+                        android:fontFamily="Calibri"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:text="Pond" />
+
+                    <TextView
+                        android:id="@+id/txtPondNm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/tab_value_size"
+                        android:fontFamily="Calibri"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:text="@string/jml_tinta" />
+
+                    <TextView
+                        android:id="@+id/txtInkNumAll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/tab_value_size"
+                        android:fontFamily="Calibri"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:id="@+id/llInkNum2"
+                    android:visibility="gone"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:text="@string/jml_tinta_pelapis" />
+
+                    <TextView
+                        android:id="@+id/txtInkNumAll2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/tab_value_size"
+                        android:fontFamily="Calibri"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llCetak"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/card_padding"
+                        android:paddingLeft="@dimen/card_padding"
+                        android:paddingRight="@dimen/card_padding"
+                        android:paddingBottom="@dimen/tiny_margin"
+                        android:background="@drawable/border_set"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="top"
+                            android:text="@string/pisau" />
+
+                        <TextView
+                            android:id="@+id/txtPisau"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="top"
+                            android:textSize="@dimen/tab_value_size"
+                            android:fontFamily="Calibri"
+                            android:layout_weight="2" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/card_padding"
+                        android:paddingLeft="@dimen/card_padding"
+                        android:paddingRight="@dimen/card_padding"
+                        android:paddingBottom="@dimen/tiny_margin"
+                        android:background="@drawable/border_set"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="top"
+                            android:text="@string/klise" />
+
+                        <TextView
+                            android:id="@+id/txtKlise"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="top"
+                            android:textSize="@dimen/tab_value_size"
+                            android:fontFamily="Calibri"
+                            android:layout_weight="2" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/card_padding"
+                        android:paddingLeft="@dimen/card_padding"
+                        android:paddingRight="@dimen/card_padding"
+                        android:paddingBottom="@dimen/tiny_margin"
+                        android:background="@drawable/border_set"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="top"
+                            android:text="@string/film" />
+
+                        <TextView
+                            android:id="@+id/txtFilm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="top"
+                            android:textSize="@dimen/tab_value_size"
+                            android:fontFamily="Calibri"
+                            android:layout_weight="2" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/card_padding"
+                        android:paddingLeft="@dimen/card_padding"
+                        android:paddingRight="@dimen/card_padding"
+                        android:paddingBottom="@dimen/tiny_margin"
+                        android:background="@drawable/border_set"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="top"
+                            android:text="@string/singleface" />
+
+                        <TextView
+                            android:id="@+id/txtSingleface"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:layout_gravity="top"
+                            android:textSize="@dimen/tab_value_size"
+                            android:fontFamily="Calibri"
+                            android:layout_weight="2" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:text="@string/is_outsource" />
+
+                    <TextView
+                        android:id="@+id/txtIsOutsource"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/tab_value_size"
+                        android:fontFamily="Calibri"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:text="@string/outsource" />
+
+                    <TextView
+                        android:id="@+id/txtVendorNm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/tab_value_size"
+                        android:fontFamily="Calibri"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:text="@string/plan_start" />
+
+                    <TextView
+                        android:id="@+id/txtStartDt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/tab_value_size"
+                        android:fontFamily="Calibri"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:text="@string/deadline" />
+
+                    <TextView
+                        android:id="@+id/txtDeadline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/tab_value_size"
+                        android:fontFamily="Calibri"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:text="@string/stats" />
+
+                    <TextView
+                        android:id="@+id/txtStats"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/tab_value_size"
+                        android:fontFamily="Calibri"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding"
+                    android:visibility="gone"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:text="@string/time_spent" />
+
+                    <TextView
+                        android:id="@+id/txtTimeSpent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/tab_value_size"
+                        android:fontFamily="Calibri"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:text="@string/brief_info" />
+
+                    <TextView
+                        android:id="@+id/txtBriefInfo"
+                        android:layout_marginTop="@dimen/card_label_padding"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="top"
+                        android:textSize="@dimen/tab_value_size"
+                        android:fontFamily="Calibri"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="500dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:textColor="@color/colorRed"
+                        android:paddingLeft="@dimen/card_padding"
+                        android:textStyle="bold|italic"
+                        android:text="@string/detail_petunjuk_kerja" />
+
+                    <WebView
+                        android:id="@+id/wvInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="820dp"
+                        android:layout_marginTop="@dimen/card_label_padding" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llStrukan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/small_padding"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:background="@color/colorGray"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/small_padding"
+                            android:textColor="@color/colorDarkOrange"
+                            android:textStyle="bold"
+                            android:text="#"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:textColor="@color/colorDarkOrange"
+                            android:textStyle="bold"
+                            android:text="@string/jenis_kertas"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center"
+                            android:textColor="@color/colorDarkOrange"
+                            android:textStyle="bold"
+                            android:text="@string/qty"/>
+                    </LinearLayout>
+
+                    <com.jayapack.wip.aren.classes.EchancedGridView
+                        android:id="@+id/listItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbars="vertical" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </ScrollView>
+        <LinearLayout
+            android:id="@+id/pnlOperation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/user_box"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btReportProgress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_rounded_btn"
+                android:layout_marginTop="@dimen/card_label_padding"
+                android:layout_marginBottom="@dimen/card_label_padding"
+                android:layout_marginLeft="@dimen/card_padding"
+                android:layout_marginRight="@dimen/card_padding"
+                android:textColor="@android:color/white"
+                android:drawableLeft="@drawable/ic_action_edit_white"
+                android:paddingLeft="@dimen/card_padding"
+                android:paddingRight="@dimen/small_padding"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textSize="@dimen/lrg_font_size"
+                android:text="@string/report_progress"/>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_forgot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="com.jayapack.wip.aren.ForgotActivity">
+
+    <include
+        layout="@layout/loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include
+        layout="@layout/no_connectivity"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/pnlForgot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_vertical_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/forgot_quest"
+            android:layout_marginTop="@dimen/step_margin"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/lrger_font_size"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/forgot_quest_text"
+            android:layout_marginTop="@dimen/bottom_bar_padding_side"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/label_value_size"/>
+
+        <EditText
+            android:id="@+id/txtAccount"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/card_label_padding"
+            android:background="@drawable/text_border"
+            android:layout_marginTop="@dimen/next2_margin"
+            android:hint="Your Email / Username.."
+            android:layout_marginBottom="@dimen/bottom_bar_padding_side" />
+
+        <Button
+            android:id="@+id/btSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/search_acc"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:drawableLeft="@drawable/ic_action_search_mini"
+            android:background="@drawable/selector_rounded_btn"
+            android:textStyle="bold"
+            android:textSize="@dimen/lrg_font_size"
+            android:textAllCaps="false"
+            android:paddingLeft="@dimen/card_label_padding"
+            android:paddingRight="@dimen/card_label_padding"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pnlAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/card_padding"
+        android:layout_marginLeft="@dimen/card_padding"
+        android:layout_marginRight="@dimen/card_padding"
+        android:padding="@dimen/activity_vertical_margin"
+        android:background="@drawable/bordered_box"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/profile_padding_bottom"
+            android:orientation="horizontal"
+            android:background="@drawable/border_set">
+
+            <com.jayapack.wip.aren.classes.RoundedImageView
+                android:id="@+id/imgPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_action_user_holo"
+                android:layout_weight="6"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/lblNama"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/card_sml_title_size"
+                        android:layout_weight="15"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/card_padding"
+                        android:paddingRight="@dimen/card_padding"
+                        android:text="Albert Ricia"
+                        android:textColor="@android:color/black"
+                        android:layout_alignParentTop="true"/>
+
+                    <TextView
+                        android:id="@+id/lblActive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_success"
+                        android:textSize="13dp"
+                        android:layout_marginLeft="@dimen/card_label_padding"
+                        android:layout_marginRight="@dimen/card_label_padding"
+                        android:text="Active"
+                        android:padding="5dp"
+                        android:textColor="@android:color/white"
+                        android:layout_alignParentTop="true"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/lblEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ricia.albert@gmail.com"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/small_font_size"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/profile_padding_bottom"
+            android:orientation="horizontal"
+            android:background="@drawable/border_set">
+
+            <CheckBox
+                android:id="@+id/chkSendPwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:enabled="false"
+                android:textColor="@color/colorDarkGray"
+                android:text="Kirimkan kata sandi baru ke email anda"/>
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/btSendPwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_rounded_btn"
+            android:textColor="@android:color/white"
+            android:drawableLeft="@drawable/ic_action_tick_mini"
+            android:paddingLeft="@dimen/card_label_padding"
+            android:paddingRight="@dimen/card_label_padding"
+            android:text="Lanjutkan kirim"/>
+    </LinearLayout>
+</FrameLayout>

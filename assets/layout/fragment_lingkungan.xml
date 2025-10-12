@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.LingkunganFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="Penilaian kelas kemahiran pemilik pohon (calon bibit unggul)"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtPenilaian"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:editable="false"
+                        android:gravity="left"
+                        android:hint="Masukkan Catatan.."
+                        android:inputType="textMultiLine"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Jumlah rata-rata mayang yang berhasil keluar nira dari 10 yang dicoba"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/txtAvgMayang"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:hint="Rata-rata mayang."
+                            android:padding="@dimen/card_padding"
+                            android:textSize="@dimen/tab_value_size" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Mampu menyadap berapa pohon dalam 1 hari apabila diproses sampai menjadi gula ?"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/txtMampuSadapGula"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:hint="Jumlah pohon.."
+                            android:padding="@dimen/card_padding"
+                            android:textSize="@dimen/tab_value_size" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Mampu menyadap berapa pohon dalam 1 hari jika hanya diambil nira saja ?"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="center_vertical"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/txtMampuSadapHari"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:hint="Jumlah pohon.."
+                            android:padding="@dimen/card_padding"
+                            android:textSize="@dimen/tab_value_size" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="Andaikata tidak perlu masak niranya dan tidak perlu transpor nira ke kampung, diperkirakan mampu menyadap berapa pohon ?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtSadapTanpaNira"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:hint="Jumlah Pohon.."
+                        android:inputType="text"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="Sudah berapa tahun menyadap?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtJmlThn"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:hint="Jumlah Tahun.."
+                        android:inputType="number"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="Apa menurut Anda menjadi tanda pohon bakal akan berproduksi banyak?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtTandaProduksi"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:hint="Tanda pohon.."
+                        android:inputType="textMultiLine"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2"
+                        android:text="Apakah menurut Anda pengambilan ijuk berpengaruh terhadap produksi pohon?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtAmbilIjuk"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:hint="Pendapat anda.."
+                        android:inputType="textMultiLine"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="Apa jenis tanaman menurut Anda yang cocok dalam kombinasi tanaman aren?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtJenisTanaman"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:hint="Jenis Tanaman.."
+                        android:inputType="textMultiLine"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="Apa pernah ada hama atau penyakit pada pohon aren Anda?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtJenisHama"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:hint="Jenis Hama atau Penyakit.."
+                        android:inputType="textMultiLine"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="Apa pernah muncul kolang kaling di bawah mayang yang di sadap?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtKolangKaling"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:hint="Jawaban anda.."
+                        android:inputType="textMultiLine"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="2"
+                            android:text="Bagaimana tanda penyadapan nira berlebihan?"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <CheckBox
+                                android:id="@+id/chkPucukTerlibat"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Pucuk Terlibat" />
+
+                            <CheckBox
+                                android:id="@+id/chkBuahJatuh"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Buah berjatuhan" />
+
+                            <CheckBox
+                                android:id="@+id/chkDaunMelebar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Daun melebar" />
+
+                            <CheckBox
+                                android:id="@+id/chkDaunTerlipat"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Daun terlipat ke bawah" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="Apakah ada hubungan antara cuaca / musim dengan munculnya mayang?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtMusimMayang"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:hint="Pendapat anda..."
+                        android:inputType="textMultiLine"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="Pada bulan apa produksi nira tertinggi?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtBulanProduksi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:hint="Nama Bulan.."
+                        android:inputType="text"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="Pada bulan apa nira paling manis?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtBulanManis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:hint="Nama Bulan.."
+                        android:inputType="text"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:height="70dp"
+                        android:text="Apa terjadi jika semua kolang kaling? dipotong (apabila ada pengalaman)"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtHappens"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:hint="Jelaskan yang terjadi.."
+                        android:inputType="textMultiLine"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:height="50dp"
+                        android:text="Apa ada binatang yang mengganggu penyadapan?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtBinatang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:hint="Binatang yang mengganggu.."
+                        android:inputType="number"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="Apa cuaca menentukan perlakuan apa yang bisa dilakukan, misalnya pengetukkan?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtCuaca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:hint="Pendapat anda..."
+                        android:inputType="number"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="Apa resiko keamanan yang dihadapi penyadap?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtResikoPenyadap"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:hint="Resiko yang dihadapi.."
+                        android:inputType="textMultiLine"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="Anda belajar penyadapan dari siapa?"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtBelajarDari"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:hint="Belajar dari siapa.."
+                        android:inputType="textMultiLine"
+                        android:padding="@dimen/card_padding"
+                        android:textSize="@dimen/tab_value_size" />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_set"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingTop="@dimen/card_padding"
+                    android:paddingRight="@dimen/card_padding"
+                    android:paddingBottom="@dimen/tiny_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="2"
+                        android:text="@string/attachment"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:id="@+id/btViewImage"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/tiny_margin"
+                        android:background="@drawable/border_set"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/card_label_padding">
+
+                        <ImageButton
+                            android:layout_width="@dimen/btnattach_size"
+                            android:layout_height="@dimen/btnattach_size"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/rounded_btn"
+                            android:padding="@dimen/small_padding"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_action_barcode_white" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/card_padding"
+                            android:textColor="@color/colorLawnGreen"
+                            android:text="View Uploaded Image" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/btUploadImg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/tiny_margin"
+                        android:background="@drawable/border_set"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/card_label_padding">
+
+                        <ImageButton
+                            android:layout_width="@dimen/btnattach_size"
+                            android:layout_height="@dimen/btnattach_size"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/rounded_btn"
+                            android:padding="@dimen/small_padding"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_action_add" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/card_padding"
+                            android:text="@string/add_attachment" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/card_padding"
+                    android:background="@drawable/border_set"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/small_margin_bottom"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/imgPaid"
+                        android:layout_width="@dimen/attach_doc_size"
+                        android:layout_height="@dimen/attach_doc_size"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_action_picture_holo" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtAttachment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:layout_weight="1"
+                            android:padding="@dimen/card_padding"
+                            android:text="@string/add_attachment" />
+
+                        <ImageButton
+                            android:id="@+id/btRemove"
+                            android:layout_width="@dimen/btnattach_size"
+                            android:layout_height="@dimen/btnattach_size"
+                            android:layout_gravity="center_vertical|right"
+                            android:background="@drawable/rounded_remove"
+                            android:padding="@dimen/small_padding"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_action_cancel" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+    </LinearLayout>
+
+</FrameLayout>

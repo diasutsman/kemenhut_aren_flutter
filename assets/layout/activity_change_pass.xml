@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_change_pass"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/border_set"
+    tools:context="com.jayapack.wip.aren.account.ChangePassActivity">
+
+    <include
+        layout="@layout/no_connectivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/card_margin_side"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/value_left_padding">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/old_password"
+                android:layout_marginBottom="@dimen/mini_padding"
+                android:textSize="@dimen/label_value_size"
+                android:textColor="@android:color/black" />
+            <EditText
+                android:id="@+id/txtOldPass"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:fontFamily="Calibri"
+                android:hint="Kata Kunci Lama.."/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/card_label_padding"
+            android:paddingBottom="@dimen/value_left_padding">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/new_password"
+                android:textSize="@dimen/label_value_size"
+                android:layout_marginBottom="@dimen/mini_padding"
+                android:textColor="@android:color/black"/>
+            <EditText
+                android:id="@+id/txtNewPass"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:inputType="textPassword"
+                android:fontFamily="Calibri"
+                android:hint="Kata Kunci Baru.."/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/card_label_padding"
+            android:paddingBottom="@dimen/value_left_padding">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/confirm"
+                android:layout_marginBottom="@dimen/mini_padding"
+                android:textSize="@dimen/label_value_size"
+                android:textColor="@android:color/black"/>
+            <EditText
+                android:id="@+id/txtConfirm"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/card_label_padding"
+                android:gravity="top"
+                android:inputType="textPassword"
+                android:fontFamily="Calibri"
+                android:hint="Konfirmasi.."/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnChangePass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_rounded_btn"
+            android:layout_marginTop="@dimen/card_label_padding"
+            android:layout_marginLeft="@dimen/value_left_padding"
+            android:layout_marginRight="@dimen/value_left_padding"
+            android:textColor="@android:color/white"
+            android:drawableLeft="@drawable/ic_action_edit_white"
+            android:paddingLeft="@dimen/card_margin_side"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="@dimen/lrg_font_size"
+            android:text="@string/change_pass"/>
+    </LinearLayout>
+</FrameLayout>

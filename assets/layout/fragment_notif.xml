@@ -1,0 +1,543 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryLight"
+    tools:context="com.jayapack.wip.aren.fragment.NotifFragment">
+
+    <ScrollView
+        android:id="@+id/scView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/btNotif"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/small_margin_bottom"
+                    android:background="@drawable/selector_tap"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:src="@drawable/icon_bell"
+                            android:layout_width="@dimen/deals_photo_size"
+                            android:layout_marginTop="@dimen/tiny_padding"
+                            android:layout_height="@dimen/deals_photo_size" />
+                        <TextView
+                            android:id="@+id/badgeNotif"
+                            android:visibility="gone"
+                            android:layout_width="@dimen/sp_tiny_btn_size"
+                            android:layout_height="@dimen/sp_tiny_btn_size"
+                            android:background="@drawable/rounded_scs"
+                            android:text="0"
+                            android:textColor="@android:color/white"
+                            android:padding="0dp"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/mini_font_size"
+                            android:layout_gravity="top|end"
+                            android:scaleType="centerInside" />
+                    </FrameLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="@dimen/activity_vertical_margin"
+                        android:paddingRight="@dimen/bottom_bar_padding"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/label_font_size"
+                            android:textColor="@android:color/black"
+                            android:text="@string/notif"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/notif_text"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/small_margin_bottom"
+                    android:visibility="gone"
+                    android:background="@drawable/selector_tap"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:src="@drawable/icon_bell"
+                            android:layout_width="@dimen/deals_photo_size"
+                            android:layout_height="@dimen/deals_photo_size"
+                            android:layout_marginTop="@dimen/tiny_padding" />
+                        <TextView
+                            android:id="@+id/badgeDeals"
+                            android:visibility="gone"
+                            android:layout_width="@dimen/sp_tiny_btn_size"
+                            android:layout_height="@dimen/sp_tiny_btn_size"
+                            android:background="@drawable/rounded_scs"
+                            android:text="1"
+                            android:textColor="@android:color/white"
+                            android:padding="0dp"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/mini_font_size"
+                            android:layout_gravity="top|end"
+                            android:scaleType="centerInside" />
+
+                    </FrameLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="@dimen/activity_vertical_margin"
+                        android:paddingRight="@dimen/bottom_bar_padding"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/label_font_size"
+                            android:textColor="@android:color/black"
+                            android:text="@string/notif"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/notif_text"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/card_padding">
+
+                <ImageView
+                    android:layout_width="@dimen/default_icon_size"
+                    android:layout_height="@dimen/default_icon_size"
+                    android:layout_marginLeft="@dimen/card_padding"
+                    android:layout_marginTop="@dimen/card_margin_side"
+                    android:src="@drawable/icon_hist_sketch" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/button_padding_ver"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/card_padding"
+                    android:paddingRight="@dimen/button_padding_ver"
+                    android:paddingTop="@dimen/button_padding_ver"
+                    android:text="@string/another_data"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnPartnerInventory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small_margin_bottom"
+                android:background="@drawable/selector_tap"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@drawable/icon_receive_hist"
+                        android:layout_width="@dimen/deals_photo_size"
+                        android:layout_height="@dimen/deals_photo_size"
+                        android:layout_marginTop="@dimen/tiny_padding" />
+
+                    <TextView
+                        android:visibility="gone"
+                        android:layout_width="@dimen/sp_tiny_btn_size"
+                        android:layout_height="@dimen/sp_tiny_btn_size"
+                        android:background="@drawable/rounded_scs"
+                        android:text="0"
+                        android:textColor="@android:color/white"
+                        android:padding="0dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/mini_font_size"
+                        android:layout_gravity="top|end"
+                        android:scaleType="centerInside" />
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/activity_vertical_margin"
+                    android:paddingRight="@dimen/bottom_bar_padding"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/label_font_size"
+                        android:textColor="@android:color/black"
+                        android:text="@string/pass_submit_report"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pass_rpt_text"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnConvertHist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:padding="@dimen/small_margin_bottom"
+                android:background="@drawable/selector_tap"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@drawable/convert_icon"
+                        android:layout_width="@dimen/deals_photo_size"
+                        android:layout_height="@dimen/deals_photo_size"
+                        android:layout_marginTop="@dimen/tiny_padding" />
+
+                    <TextView
+                        android:visibility="gone"
+                        android:layout_width="@dimen/sp_tiny_btn_size"
+                        android:layout_height="@dimen/sp_tiny_btn_size"
+                        android:background="@drawable/rounded_scs"
+                        android:text="0"
+                        android:textColor="@android:color/white"
+                        android:padding="0dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/mini_font_size"
+                        android:layout_gravity="top|end"
+                        android:scaleType="centerInside" />
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/activity_vertical_margin"
+                    android:paddingRight="@dimen/bottom_bar_padding"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/label_font_size"
+                        android:textColor="@android:color/black"
+                        android:text="@string/convert_hist"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/convert_hist_text"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnReturHist"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small_margin_bottom"
+                android:background="@drawable/selector_tap"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@drawable/icon_retur_hist"
+                        android:layout_width="@dimen/deals_photo_size"
+                        android:layout_height="@dimen/deals_photo_size"
+                        android:layout_marginTop="@dimen/tiny_padding" />
+
+                    <TextView
+                        android:visibility="gone"
+                        android:layout_width="@dimen/sp_tiny_btn_size"
+                        android:layout_height="@dimen/sp_tiny_btn_size"
+                        android:background="@drawable/rounded_scs"
+                        android:text="0"
+                        android:textColor="@android:color/white"
+                        android:padding="0dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/mini_font_size"
+                        android:layout_gravity="top|end"
+                        android:scaleType="centerInside" />
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/activity_vertical_margin"
+                    android:paddingRight="@dimen/bottom_bar_padding"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/label_font_size"
+                        android:textColor="@android:color/black"
+                        android:text="@string/retur_hist"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/retur_hist_text"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnLetdownHist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small_margin_bottom"
+                android:visibility="gone"
+                android:background="@drawable/selector_tap"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@drawable/icon_letdown_hist"
+                        android:layout_width="@dimen/deals_photo_size"
+                        android:layout_height="@dimen/deals_photo_size"
+                        android:layout_marginTop="@dimen/tiny_padding" />
+
+                    <TextView
+                        android:visibility="gone"
+                        android:layout_width="@dimen/sp_tiny_btn_size"
+                        android:layout_height="@dimen/sp_tiny_btn_size"
+                        android:background="@drawable/rounded_scs"
+                        android:text="0"
+                        android:textColor="@android:color/white"
+                        android:padding="0dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/mini_font_size"
+                        android:layout_gravity="top|end"
+                        android:scaleType="centerInside" />
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/activity_vertical_margin"
+                    android:paddingRight="@dimen/bottom_bar_padding"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/label_font_size"
+                        android:textColor="@android:color/black"
+                        android:text="@string/letdown_hist"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/letdown_hist_text"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnDispatchHist"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small_margin_bottom"
+                android:background="@drawable/selector_tap"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@drawable/icon_dispatch_hist"
+                        android:layout_width="@dimen/deals_photo_size"
+                        android:layout_height="@dimen/deals_photo_size"
+                        android:layout_marginTop="@dimen/tiny_padding" />
+
+                    <TextView
+                        android:visibility="gone"
+                        android:layout_width="@dimen/sp_tiny_btn_size"
+                        android:layout_height="@dimen/sp_tiny_btn_size"
+                        android:background="@drawable/rounded_scs"
+                        android:text="0"
+                        android:textColor="@android:color/white"
+                        android:padding="0dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/mini_font_size"
+                        android:layout_gravity="top|end"
+                        android:scaleType="centerInside" />
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/activity_vertical_margin"
+                    android:paddingRight="@dimen/bottom_bar_padding"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/label_font_size"
+                        android:textColor="@android:color/black"
+                        android:text="@string/dispatch_hist"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dispatch_hist_text"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnPMoveHist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small_margin_bottom"
+                android:background="@drawable/selector_tap"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@drawable/icon_pmove_hist"
+                        android:layout_width="@dimen/deals_photo_size"
+                        android:layout_height="@dimen/deals_photo_size"
+                        android:layout_marginTop="@dimen/tiny_padding" />
+
+                    <TextView
+                        android:visibility="gone"
+                        android:layout_width="@dimen/sp_tiny_btn_size"
+                        android:layout_height="@dimen/sp_tiny_btn_size"
+                        android:background="@drawable/rounded_scs"
+                        android:text="0"
+                        android:textColor="@android:color/white"
+                        android:padding="0dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/mini_font_size"
+                        android:layout_gravity="top|end"
+                        android:scaleType="centerInside" />
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/activity_vertical_margin"
+                    android:paddingRight="@dimen/bottom_bar_padding"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/label_font_size"
+                        android:textColor="@android:color/black"
+                        android:text="@string/pmove_hist"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pmove_hist_text"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnPartnerSales"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small_margin_bottom"
+                android:background="@drawable/selector_tap"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:src="@drawable/stock_monitor_icon"
+                        android:layout_width="@dimen/deals_photo_size"
+                        android:layout_height="@dimen/deals_photo_size"
+                        android:layout_marginTop="@dimen/tiny_padding" />
+
+                    <TextView
+                        android:visibility="gone"
+                        android:layout_width="@dimen/sp_tiny_btn_size"
+                        android:layout_height="@dimen/sp_tiny_btn_size"
+                        android:background="@drawable/rounded_scs"
+                        android:text="0"
+                        android:textColor="@android:color/white"
+                        android:padding="0dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/mini_font_size"
+                        android:layout_gravity="top|end"
+                        android:scaleType="centerInside" />
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/activity_vertical_margin"
+                    android:paddingRight="@dimen/bottom_bar_padding"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/label_font_size"
+                        android:textColor="@android:color/black"
+                        android:text="@string/performance_report"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/performance_text"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/llEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+        <include
+            layout="@layout/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</LinearLayout>

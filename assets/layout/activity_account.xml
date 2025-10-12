@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_account"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jayapack.wip.aren.account.AccountActivity">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/no_connectivity"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/btnProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/profile_margin_bottom"
+            android:background="@drawable/selector_tap"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:src="@drawable/icon_account"
+                android:layout_width="@dimen/medium_photo_size"
+                android:layout_height="@dimen/medium_photo_size" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="@dimen/label_value_size"
+                android:textColor="@android:color/black"
+                android:paddingLeft="@dimen/activity_vertical_margin"
+                android:paddingRight="@dimen/bottom_bar_padding"
+                android:layout_gravity="center_vertical"
+                android:text="@string/my_profile"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/btnChangePass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/profile_margin_bottom"
+            android:background="@drawable/selector_tap"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:src="@drawable/icon_changepass"
+                android:layout_width="@dimen/medium_photo_size"
+                android:layout_height="@dimen/medium_photo_size" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="@dimen/label_value_size"
+                android:textColor="@android:color/black"
+                android:paddingLeft="@dimen/activity_vertical_margin"
+                android:paddingRight="@dimen/bottom_bar_padding"
+                android:layout_gravity="center_vertical"
+                android:text="@string/change_pass"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/profile_margin_bottom"
+            android:background="@drawable/selector_tap"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:src="@drawable/icon_logout"
+                android:layout_width="@dimen/medium_photo_size"
+                android:layout_height="@dimen/medium_photo_size" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="@dimen/label_value_size"
+                android:textColor="@android:color/black"
+                android:paddingLeft="@dimen/label_value_size"
+                android:paddingRight="@dimen/bottom_bar_padding"
+                android:layout_gravity="center_vertical"
+                android:text="@string/sign_out"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

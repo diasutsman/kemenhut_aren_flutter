@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/small_padding"
+            android:background="@color/colorDarkRed"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:paddingLeft="@dimen/small_padding"
+                android:text="@string/dialog_konfirmasi"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/card_padding"
+            android:paddingLeft="@dimen/card_padding"
+            android:paddingRight="@dimen/card_padding"
+            android:paddingBottom="@dimen/tiny_margin"
+            android:background="@android:color/white"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="top"
+                    android:textStyle="bold"
+                    android:layout_weight="4"
+                    android:text="@string/jml_carton"/>
+                <EditText
+                    android:id="@+id/txtJmlKarton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/tab_value_size"
+                    android:inputType="number"
+                    android:paddingLeft="@dimen/button_padding_hor"
+                    android:layout_gravity="top"
+                    android:paddingTop="@dimen/mini_padding"
+                    android:fontFamily="Calibri"
+                    android:text="0"
+                    android:layout_weight="2" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/card_padding"
+            android:paddingLeft="@dimen/card_padding"
+            android:paddingRight="@dimen/card_padding"
+            android:paddingBottom="@dimen/tiny_margin"
+            android:background="@android:color/white"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="top"
+                    android:textStyle="bold"
+                    android:layout_weight="4"
+                    android:text="@string/jml_pcs"/>
+                <EditText
+                    android:id="@+id/txtJmlPcs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/tab_value_size"
+                    android:inputType="number"
+                    android:text="0"
+                    android:paddingLeft="@dimen/button_padding_hor"
+                    android:layout_gravity="top"
+                    android:paddingTop="@dimen/mini_padding"
+                    android:fontFamily="Calibri"
+                    android:layout_weight="2" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

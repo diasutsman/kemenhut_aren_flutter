@@ -1,0 +1,301 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight"
+
+    tools:context="com.jayapack.wip.aren.fragment.MenuFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_vertical_margin"
+                android:paddingRight="@dimen/small_padding"
+                android:orientation="vertical">
+
+                <!-- Assignment -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_box"
+                    android:layout_marginBottom="@dimen/profile_margin_bottom"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_header"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/card_margin_side"
+                        android:paddingTop="@dimen/small_padding"
+                        android:paddingRight="@dimen/small_padding"
+                        android:paddingBottom="@dimen/small_padding">
+
+                        <ImageView
+                            android:layout_width="@dimen/small_icon_size"
+                            android:layout_height="@dimen/small_icon_size"
+                            android:layout_marginRight="@dimen/card_label_padding"
+                            android:src="@drawable/kategori_input" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/check_in"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/label_font_size"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/card_padding">
+
+                        <LinearLayout
+                            android:id="@+id/btSales"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/card_margin_side"
+                            android:visibility="gone"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="@dimen/menu_btn_size"
+                                android:layout_height="@dimen/menu_btn_size"
+                                android:padding="@dimen/card_label_padding"
+                                android:background="@drawable/selector_bordered_basic"
+                                android:src="@drawable/sales_input" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/mini_font_size"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:text="@string/task_data" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btRewinding"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/card_margin_side"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="@dimen/menu_btn_size"
+                                android:layout_height="@dimen/menu_btn_size"
+                                android:padding="@dimen/card_label_padding"
+                                android:background="@drawable/selector_bordered_basic"
+                                android:src="@drawable/defect_icon" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/mini_font_size"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:text="@string/defect_items" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/btRetur"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/card_margin_side"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="@dimen/menu_btn_size"
+                                android:layout_height="@dimen/menu_btn_size"
+                                android:padding="@dimen/card_label_padding"
+                                android:background="@drawable/selector_bordered_basic"
+                                android:src="@drawable/icon_return" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/mini_font_size"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:text="@string/returns" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/btRegister"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/card_margin_side"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="@dimen/menu_btn_size"
+                                android:layout_height="@dimen/menu_btn_size"
+                                android:padding="@dimen/card_label_padding"
+                                android:background="@drawable/selector_bordered_basic"
+                                android:src="@drawable/catalogue" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/mini_font_size"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:text="@string/register" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Registration -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_box"
+                    android:layout_marginBottom="@dimen/profile_margin_bottom"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/small_padding"
+                        android:paddingRight="@dimen/small_padding"
+                        android:paddingLeft="@dimen/card_margin_side"
+                        android:paddingBottom="@dimen/small_padding"
+                        android:background="@drawable/rounded_header">
+                        <ImageView
+                            android:layout_width="@dimen/small_icon_size"
+                            android:layout_height="@dimen/small_icon_size"
+                            android:src="@drawable/kategori_service"
+                            android:layout_marginRight="@dimen/card_label_padding"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/data_input"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/label_font_size"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/card_padding">
+
+                        <LinearLayout
+                            android:id="@+id/btInventory"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/card_margin_side"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="@dimen/menu_btn_size"
+                                android:layout_height="@dimen/menu_btn_size"
+                                android:padding="@dimen/card_label_padding"
+                                android:background="@drawable/selector_bordered_basic"
+                                android:src="@drawable/inventory_input" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/mini_font_size"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:text="@string/inventarisasi" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btProses"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/card_margin_side"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="@dimen/menu_btn_size"
+                                android:layout_height="@dimen/menu_btn_size"
+                                android:padding="@dimen/card_label_padding"
+                                android:background="@drawable/selector_bordered_basic"
+                                android:src="@drawable/kategori_input" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/mini_font_size"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:text="@string/penyadapan" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Others -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_box"
+                    android:layout_marginBottom="@dimen/profile_margin_bottom"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/small_padding"
+                        android:paddingRight="@dimen/small_padding"
+                        android:paddingLeft="@dimen/card_margin_side"
+                        android:paddingBottom="@dimen/small_padding"
+                        android:background="@drawable/rounded_header">
+                        <ImageView
+                            android:layout_width="@dimen/small_icon_size"
+                            android:layout_height="@dimen/small_icon_size"
+                            android:src="@drawable/kategori_service"
+                            android:layout_marginRight="@dimen/card_label_padding"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/label_font_size"
+                            android:text="@string/others"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/card_padding">
+
+                        <LinearLayout
+                            android:id="@+id/btServiceCenter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/card_margin_side"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="@dimen/menu_btn_size"
+                                android:layout_height="@dimen/menu_btn_size"
+                                android:padding="@dimen/card_label_padding"
+                                android:background="@drawable/selector_bordered_basic"
+                                android:src="@drawable/service_center" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/mini_font_size"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:text="Pohon" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

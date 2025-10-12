@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollUser"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jayapack.wip.aren.account.UserActivity">
+
+    <include
+        layout="@layout/no_connectivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/activity_user"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/activity_vertical_margin"
+                    android:paddingLeft="@dimen/activity_vertical_margin"
+                    android:paddingRight="@dimen/activity_vertical_margin"
+                    android:layout_marginBottom="@dimen/card_padding">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <com.jayapack.wip.aren.classes.RoundedImageView
+                            android:id="@+id/imgProfile"
+                            android:layout_width="@dimen/img_profile_size"
+                            android:layout_height="@dimen/img_profile_size"
+                            android:layout_gravity="center_horizontal"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_action_user_mini"/>
+
+                        <ImageButton
+                            android:id="@+id/imgChooser"
+                            android:layout_width="@dimen/sp_tiny_btn_size"
+                            android:layout_height="@dimen/sp_tiny_btn_size"
+                            android:background="@drawable/camera_icon"
+                            android:layout_marginBottom="@dimen/tiny_padding"
+                            android:layout_gravity="bottom|end"
+                            android:scaleType="centerInside" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/fab_margin"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/label_value_size"
+                            android:textColor="@android:color/black"
+                            android:layout_marginBottom="@dimen/mini_padding"
+                            android:text="@string/no_hp" />
+
+                        <TextView
+                            android:id="@+id/txtPhone"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/lrger_font_size"
+                            android:textColor="@color/colorLightRed"
+                            android:layout_marginBottom="@dimen/tiny_padding" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/user_box">
+
+                    <LinearLayout
+                        android:id="@+id/llName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/activity_vertical_margin"
+                        android:layout_marginTop="1dp"
+                        android:background="@drawable/border_set"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/lrg_font_size"
+                            android:paddingBottom="@dimen/small_padding_bottom"
+                            android:textColor="@android:color/black"
+                            android:text="@string/view_name" />
+                        <TextView
+                            android:id="@+id/txtName"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/label_value_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/activity_vertical_margin"
+                        android:background="@drawable/border_set"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/lrg_font_size"
+                            android:paddingBottom="@dimen/small_padding_bottom"
+                            android:textColor="@android:color/black"
+                            android:text="@string/username" />
+                        <TextView
+                            android:id="@+id/txtUsername"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/label_value_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llPosID"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/activity_vertical_margin"
+                        android:background="@drawable/border_set"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/lrg_font_size"
+                            android:paddingBottom="@dimen/small_padding_bottom"
+                            android:textColor="@android:color/black"
+                            android:text="@string/partner_name" />
+                        <TextView
+                            android:id="@+id/txtBrcName"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/label_value_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/activity_vertical_margin"
+                        android:background="@drawable/border_set"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/lrg_font_size"
+                            android:paddingBottom="@dimen/mini_padding"
+                            android:textColor="@android:color/black"
+                            android:text="@string/email" />
+                        <TextView
+                            android:id="@+id/txtEmail"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/label_value_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llIDCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/activity_vertical_margin"
+                        android:background="@drawable/border_set"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/lrg_font_size"
+                            android:paddingBottom="@dimen/mini_padding"
+                            android:textColor="@android:color/black"
+                            android:text="@string/id_card" />
+                        <TextView
+                            android:id="@+id/txtIDCard"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/label_value_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llGender"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/activity_vertical_margin"
+                        android:background="@drawable/border_set"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/lrg_font_size"
+                            android:paddingBottom="@dimen/mini_padding"
+                            android:text="@string/jenkel" />
+                        <TextView
+                            android:id="@+id/txtGender"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/label_value_size" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/activity_vertical_margin"
+                        android:background="@drawable/border_set"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/lrg_font_size"
+                            android:paddingBottom="@dimen/mini_padding"
+                            android:text="@string/alamat_pengguna" />
+                        <TextView
+                            android:id="@+id/txtAddress"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/label_value_size" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="@dimen/pad_field_top"
+            android:background="@drawable/user_box"
+            android:paddingTop="1dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btCall"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:text="@string/call"
+                android:textColor="@color/colorDarkLawnGreen"
+                android:paddingTop="@dimen/card_padding"
+                android:paddingBottom="@dimen/card_padding"
+                android:drawableTop="@drawable/phone_icon"
+                android:background="@drawable/selector_basic"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorGray" />
+            <Button
+                android:id="@+id/btMessage"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:drawableTop="@drawable/message_icon"
+                android:text="@string/message"
+                android:textColor="@color/colorDarkBlue"
+                android:background="@drawable/selector_basic"
+                android:paddingTop="@dimen/card_padding"
+                android:paddingBottom="@dimen/card_padding"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

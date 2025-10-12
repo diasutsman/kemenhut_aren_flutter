@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/small_padding"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="18dp"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:text="No."/>
+
+            <ImageView
+                android:id="@+id/btRemove"
+                android:layout_width="@dimen/mini_icon_size"
+                android:layout_height="@dimen/mini_icon_size"
+                android:layout_gravity="center"
+                android:src="@drawable/remove_icon" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtNamaBarang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="18dp"
+                android:paddingLeft="@dimen/small_padding"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:text="Nama Barang"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/txtSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/small_padding"
+                    android:textSize="@dimen/small_font_size"
+                    android:textColor="@android:color/black"
+                    android:text="Size :"/>
+                <TextView
+                    android:id="@+id/txtColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/small_padding"
+                    android:textSize="@dimen/small_font_size"
+                    android:textColor="@android:color/black"
+                    android:text="Color : "/>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/txtDesk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:textColor="@android:color/black"
+            android:text="-"/>
+        <TextView
+            android:id="@+id/txtQty_m"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:textAlignment="center"
+            android:textSize="@dimen/item_desc_size"
+            android:textColor="@android:color/black"
+            android:text="1500"/>
+
+        <TextView
+            android:id="@+id/txtQty_kg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:textAlignment="center"
+            android:textSize="@dimen/item_desc_size"
+            android:textColor="@android:color/black"
+            android:text="10.2"/>
+    </LinearLayout>
+</LinearLayout>

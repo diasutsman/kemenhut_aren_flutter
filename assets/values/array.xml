@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gender">
+        <item>Pria</item>
+        <item>Wanita</item>
+    </string-array>
+    <string-array name="receive_type">
+        <item>Normal</item>
+        <item>RFS (Tolakan Barang)</item>
+        <item>Retur</item>
+    </string-array>
+    <string-array name="writeoff_type">
+        <item>Pemusnahan Barang</item>
+        <item>Kirim Keluar</item>
+    </string-array>
+    <string-array name="scan_type">
+        <item>Finished Good</item>
+        <item>Rewinding</item>
+    </string-array>
+    <string-array name="shift_data">
+        <item>Shift 1</item>
+        <item>Shift 2</item>
+        <item>Shift 3</item>
+    </string-array>
+    <string-array name="priceref_data">
+        <item>--- Select Pricing Ref ---</item>
+        <item>Transaction</item>
+        <item>Master Product</item>
+    </string-array>
+
+    <string-array name="progress_data">
+        <item>--- Select Process ---</item>
+    </string-array>
+    <string-array name="check">
+        <item></item>
+        <item>√</item>
+        <item>R</item>
+        <item>-</item>
+    </string-array>
+    <string-array name="arah_pelepah">
+        <item>Kiri</item>
+        <item>Kanan</item>
+    </string-array>
+    <string-array name="yesno">
+        <item>Ya</item>
+        <item>Tidak</item>
+    </string-array>
+</resources>

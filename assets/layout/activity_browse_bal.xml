@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jayapack.wip.aren.global.BrowseBalActivity">
+
+    <include
+        layout="@layout/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <include
+        layout="@layout/loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.jayapack.wip.aren.classes.EchancedGridView
+            xmlns:ptr="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/listItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:numColumns="1"
+            android:stretchMode="columnWidth"
+            android:paddingBottom="@dimen/bottom_bar_padding"
+            ptr:ptrMode="both"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</FrameLayout>

@@ -1,0 +1,13 @@
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tab"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical|center_horizontal"
+    android:textColor="@android:color/white"
+    android:paddingLeft="@dimen/tiny_padding"
+    android:paddingRight="@dimen/mini_padding"
+    android:layout_marginRight="@dimen/mini_padding"
+    android:textAllCaps="false"
+    android:textStyle="bold"
+    android:textSize="@dimen/tab_value_size" />
+ 
