@@ -1,3 +1,4 @@
+// lib/ui/screens/main/screen/main_screen.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kemenhut_aren_flutter/ui/screens/_index.dart';
@@ -32,7 +33,6 @@ class MainScreen extends StatelessWidget {
   }
 
   Widget _buildCustomAppBar() {
-    // Matches your layout_action_bar
     return SafeArea(
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -53,7 +53,7 @@ class MainScreen extends StatelessWidget {
   Widget _buildBody(int idx) {
     switch (idx) {
       case 0:
-        return const Center(child: Text('Home Screen Content'));
+        return const HomeScreen(); // ✅ Use your actual HomeScreen widget here
       case 1:
         return const Center(child: Text('Profile Screen Content'));
       default:
