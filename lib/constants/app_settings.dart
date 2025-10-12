@@ -222,6 +222,8 @@ class AppSettings {
       sessionID: prefs.getString("sessionID") ?? "",
     );
 
+    print('getSession() account: $account');
+
     AppSettings.userID = account.userID;
     AppSettings.adminID = account.adminID;
     return account;
@@ -258,6 +260,11 @@ class Account {
   final String email;
   final String photo;
   final String sessionID;
+
+  @override
+  String toString() {
+    return 'Account(userID=$userID, adminID=$adminID, partnerID=$partnerID, partnerLevel=$partnerLevel, partnerPosition=$partnerPosition, partnerCode=$partnerCode, partnerName=$partnerName, username=$username, firstName=$firstName, email=$email, photo=$photo, sessionID=$sessionID)';
+  }
 
   Account({
     required this.userID,

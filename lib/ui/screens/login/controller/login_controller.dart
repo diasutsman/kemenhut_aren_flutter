@@ -75,27 +75,50 @@ class LoginController extends GetxController {
         json = {};
       }
 
+      print('login json: $json');
+
       final errCode = json['errCode'] ?? json['err_code'] ?? resp.statusCode;
       final errMsg = json['errMsg'] ?? json['err_msg'] ?? 'Login gagal';
+
+      print('login errCode: $errCode');
+      print('login errMsg: $errMsg');
 
       if (errCode == AppSettings.SUCCESS_CODE) {
         final Map<String, dynamic> u =
             (json['user'] ?? {}) as Map<String, dynamic>;
 
         // The Java code stored these fields; we mirror them (use empty defaults if missing)
-        final userID = (u['userid'] ?? u['userID'] ?? '').toString();
-        final roleNm = (u['rolenm'] ?? u['roleNm'] ?? '').toString();
-        final position = (u['position'] ?? '').toString();
-        final usernamePlain = (u['username'] ?? '').toString();
-        final nama = (u['nama'] ?? u['first_name'] ?? '').toString();
-        final photo = (u['photo'] ?? '').toString();
-        final email = (u['email'] ?? '').toString();
-        final adminID = (u['adminid'] ?? u['adminID'] ?? '').toString();
+        final userID =
+            (u['userid'] ?? u['userID'] ?? u['USERID'] ?? '').toString();
+        final roleNm =
+            (u['ROLENM'] ?? u['rolenm'] ?? u['roleNm'] ?? '').toString();
+        final position = (u['POSITION'] ?? u['position'] ?? '').toString();
+        final usernamePlain = (u['username'] ?? u['USERNAME'] ?? '').toString();
+        final nama =
+            (u['NAMA'] ?? u['nama'] ?? u['first_name'] ?? '').toString();
+        final photo = (u['photo'] ?? u['PHOTO'] ?? '').toString();
+        final email = (u['email'] ?? u['EMAIL'] ?? '').toString();
+        final adminID =
+            (u['adminid'] ?? u['adminID'] ?? u['ADMINID'] ?? '').toString();
 
         // Partner fields were empty strings in your Java example
         const code = '';
         const partnerID = '';
         const partnerName = '';
+
+        print(
+          "userID: $userID\n"
+          "roleNm: $roleNm\n"
+          "position: $position\n"
+          "usernamePlain: $usernamePlain\n"
+          "nama: $nama\n"
+          "photo: $photo\n"
+          "email: $email\n"
+          "adminID: $adminID\n"
+          "code: $code\n"
+          "partnerID: $partnerID\n"
+          "partnerName: $partnerName",
+        );
 
         await AppSettings.createSession(
           userID,
@@ -135,8 +158,9 @@ class LoginController extends GetxController {
         'Error, Tidak dapat terhubung ke Server',
         snackPosition: SnackPosition.BOTTOM,
       );
-    } catch (e) {
+    } catch (e, st) {
       isLoading.value = false;
+      print('login error: $e, $st');
       Get.snackbar('Error', 'Error: $e', snackPosition: SnackPosition.BOTTOM);
     }
   }
