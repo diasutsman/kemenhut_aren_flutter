@@ -147,7 +147,7 @@ class LoginController extends GetxController {
   }
 
   void _gotoHome() {
-    Get.offAndToNamed(AppRoutes.home);
+    Get.offAndToNamed(AppRoutes.main);
   }
 
   @override
