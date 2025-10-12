@@ -50,129 +50,150 @@ class LoginScreen extends StatelessWidget {
               ),
 
               // ======= Form Panel =======
-              SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Column(
-                  children: [
-                    const SizedBox(height: 350),
-                    // pnlLogin
-                    Container(
-                      width: double.infinity,
-                      padding: const EdgeInsets.all(16),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          // Username
-                          _InputWithLeftIcon(
-                            controller: controller.usernameCtrl,
-                            hintText: 'Username / Email..',
-                            assetIcon: 'assets/drawable/email_icon.png',
-                          ),
-                          const SizedBox(height: 12),
-                          // Password + "Forgot ?"
-                          Stack(
-                            alignment: Alignment.centerRight,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SingleChildScrollView(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Column(
+                      children: [
+                        const SizedBox(height: 350),
+                        // pnlLogin
+                        Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
+                              // Username
                               _InputWithLeftIcon(
-                                controller: controller.passwordCtrl,
-                                hintText: 'Password..',
-                                assetIcon: 'assets/drawable/lock_icon.png',
-                                obscure: true,
-                                contentPaddingRight: 84,
+                                controller: controller.usernameCtrl,
+                                hintText: 'Username / Email..',
+                                assetIcon: 'assets/drawable/email_icon.png',
                               ),
-                              TextButton(
-                                onPressed: controller.gotoForgot,
-                                child: const Text(
-                                  'Forgot ?',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
+                              const SizedBox(height: 12),
+                              // Password + "Forgot ?"
+                              Stack(
+                                alignment: Alignment.centerRight,
+                                children: [
+                                  _InputWithLeftIcon(
+                                    controller: controller.passwordCtrl,
+                                    hintText: 'Password..',
+                                    assetIcon: 'assets/drawable/lock_icon.png',
+                                    obscure: true,
+                                    contentPaddingRight: 84,
+                                  ),
+                                  TextButton(
+                                    onPressed: controller.gotoForgot,
+                                    child: const Text(
+                                      'Forgot ?',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+
+                              const SizedBox(height: 8),
+
+                              // Sign In Button
+                              SizedBox(
+                                height: 56,
+                                child: ElevatedButton(
+                                  onPressed: controller.login,
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: greenButton,
+                                    foregroundColor: Colors.white,
+                                    elevation: 0,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(28),
+                                    ),
+                                    textStyle: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  child: const Text('Sign In'),
                                 ),
+                              ),
+
+                              const SizedBox(height: 16),
+
+                              // Divider + "Sign in with" (matches XML; buttons not included)
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: Container(
+                                      height: 1,
+                                      color: darkGray,
+                                    ),
+                                  ),
+                                  const Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 12,
+                                    ),
+                                    child: Text(
+                                      'Account is given by Administrator',
+                                      style: TextStyle(color: Colors.black),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Container(
+                                      height: 1,
+                                      color: darkGray,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
+                        ),
+                      ],
+                    ),
+                  ),
 
-                          const SizedBox(height: 8),
-
-                          // Sign In Button
-                          SizedBox(
-                            height: 56,
-                            child: ElevatedButton(
-                              onPressed: controller.login,
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: greenButton,
-                                foregroundColor: Colors.white,
-                                elevation: 0,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(28),
-                                ),
-                                textStyle: const TextStyle(
-                                  fontSize: 18,
+                  Column(
+                    children: [
+                      Row(
+                        children: [
+                          const Expanded(
+                            child: Text(
+                              "Don't have account ?",
+                              textAlign: TextAlign.right,
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          ),
+                          const SizedBox(width: 16),
+                          Expanded(
+                            child: GestureDetector(
+                              onTap: () {},
+                              child: Text(
+                                'Contact Admin',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                  color: theme.colorScheme.primary,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              child: const Text('Sign In'),
                             ),
-                          ),
-
-                          const SizedBox(height: 16),
-
-                          // Divider + "Sign in with" (matches XML; buttons not included)
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Container(height: 1, color: darkGray),
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 12),
-                                child: Text(
-                                  'Account is given by Administrator',
-                                  style: TextStyle(color: Colors.black),
-                                ),
-                              ),
-                              Expanded(
-                                child: Container(height: 1, color: darkGray),
-                              ),
-                            ],
                           ),
                         ],
                       ),
-                    ),
 
-                    const SizedBox(height: 100),
-                  ],
-                ),
+                      // const SizedBox(height: 100),
+                    ],
+                  ),
+                ],
               ),
 
               // ======= Footer: "Don't have account ?  Contact Admin" =======
-              Positioned(
-                bottom: 32,
-                left: 20,
-                right: 20,
-                child: Row(
-                  children: [
-                    const Expanded(
-                      child: Text(
-                        "Don't have account ?",
-                        textAlign: TextAlign.right,
-                        style: TextStyle(color: Colors.black),
-                      ),
-                    ),
-                    const SizedBox(width: 16),
-                    Expanded(
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: Text(
-                          'Contact Admin',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            color: theme.colorScheme.primary,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              // Positioned(
+              //   bottom: 32,
+              //   left: 20,
+              //   right: 20,
+              //   child:
+              // ),
 
               // ======= Loading overlay (include/progress) =======
               Obx(
