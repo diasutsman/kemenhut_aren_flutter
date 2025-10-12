@@ -53,9 +53,9 @@ class MainScreen extends StatelessWidget {
   Widget _buildBody(int idx) {
     switch (idx) {
       case 0:
-        return const HomeScreen(); // ✅ Use your actual HomeScreen widget here
+        return const HomeScreen();
       case 1:
-        return const Center(child: Text('Profile Screen Content'));
+        return const ProfileScreen(); // <-- now shows the Profile tab UI
       default:
         return const Center(child: Text('Unknown'));
     }
