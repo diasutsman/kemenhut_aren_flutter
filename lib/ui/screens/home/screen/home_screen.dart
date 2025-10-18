@@ -1,5 +1,7 @@
 // lib/ui/screens/home/screen/home_screen.dart
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:kemenhut_aren_flutter/constants/_index.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -21,7 +23,7 @@ class HomeScreen extends StatelessWidget {
                   title: "Inventaris",
                   icon: Icons.warehouse_rounded,
                   onTap: () {
-                    // TODO: Navigate to Inventaris page
+                    Get.toNamed(AppRoutes.inventaris);
                   },
                 ),
               ],
@@ -35,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                   title: "Pohon",
                   icon: Icons.location_on_rounded,
                   onTap: () {
-                    // TODO: Navigate to Pohon page
+                    Get.toNamed(AppRoutes.serviceCenter);
                   },
                 ),
               ],

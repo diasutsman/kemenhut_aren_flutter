@@ -7,7 +7,7 @@ class AppBinding implements Bindings {
   @override
   void dependencies() {
     // Get.put<Session>(Session(), permanent: true);
-    // Get.put<Logger>(Logger(), permanent: true);
+    Get.put<Logger>(Logger(), permanent: true);
     // Get.put<AuthenticationRepository>(
     //   AuthenticationRepository(),
     //   permanent: true,

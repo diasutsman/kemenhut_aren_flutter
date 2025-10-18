@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:kemenhut_aren_flutter/constants/app_routes.dart';
 import 'package:kemenhut_aren_flutter/ui/screens/_index.dart';
-import 'package:kemenhut_aren_flutter/ui/screens/about/screen/about_screen.dart'; // 👈 added
+import 'package:kemenhut_aren_flutter/ui/screens/about/screen/about_screen.dart';
 
 List<GetPage> pageRoutes = [
   GetPage(
@@ -35,8 +35,18 @@ List<GetPage> pageRoutes = [
     transition: Transition.fadeIn,
   ),
   GetPage(
-    name: AppRoutes.about, // 👈 new
+    name: AppRoutes.about,
     page: () => const AboutScreen(),
+    transition: Transition.fadeIn,
+  ),
+  GetPage(
+    name: AppRoutes.inventaris,
+    page: () => const InventarisScreen(),
+    transition: Transition.fadeIn,
+  ),
+  GetPage(
+    name: AppRoutes.serviceCenter,
+    page: () => const ServiceCenterScreen(),
     transition: Transition.fadeIn,
   ),
 ];

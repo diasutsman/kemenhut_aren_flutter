@@ -34,6 +34,10 @@ class AppSettings {
   static String URL_VIEW_PLAN = "${URL_BASE}response/plan";
   static String URL_VIEW_PLAN2 = "${URL_BASE}response/plan2";
   static String URL_VIEW_AREN = "${URL_BASE}aren/view";
+  static String URL_SAVE_AREN = "${URL_BASE}aren/add";
+  static String URL_SERVICE_CENTER = "${URL_BASE}vendor/list";
+  static String URL_AREN_REMOVE = "${URL_BASE}aren/remove";
+  static String URL_AREN_RESTORE = "${URL_BASE}aren/undo";
   static String URL_VIEW_SPK = "${URL_BASE}response/spkno";
   static String URL_DETAIL_SPK = "${URL_BASE}response/viewspk";
   static String URL_KARYAWAN_LIST = "${URL_BASE}user/karyawan";

@@ -7,5 +7,7 @@ class AppRoutes {
   static const account = '/account';
   static const profileDetail = '/account/profile';
   static const changePassword = '/account/change-password';
-  static const about = '/about'; // 👈 added
+  static const about = '/about';
+  static const inventaris = '/inventaris';
+  static const serviceCenter = '/service-center';
 }
