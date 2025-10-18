@@ -12,6 +12,8 @@ class UserScreen extends StatelessWidget {
       init: UserController(),
       builder: (controller) {
         final profile = controller.profile.value;
+        final showOverlay =
+            controller.isLoading.value || controller.isUploadingPhoto.value;
         return Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
@@ -278,7 +280,7 @@ class UserScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              if (controller.isLoading.value) const _LoadingOverlay(),
+              if (showOverlay) const _LoadingOverlay(),
             ],
           ),
         );

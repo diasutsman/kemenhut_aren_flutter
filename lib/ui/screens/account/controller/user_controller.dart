@@ -1,9 +1,11 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide FormData;
+import 'package:image_picker/image_picker.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import 'package:kemenhut_aren_flutter/constants/_index.dart';
 import 'package:kemenhut_aren_flutter/ui/screens/account/model/user_profile.dart';
@@ -18,7 +20,9 @@ class UserController extends GetxController {
   final isOffline = false.obs;
   final profile = Rxn<UserProfile>();
   final targetUserId = ''.obs;
+  final isUploadingPhoto = false.obs;
   StreamSubscription<InternetStatus>? _connectionSub;
+  final ImagePicker _imagePicker = ImagePicker();
 
   bool get canEdit =>
       targetUserId.value.isEmpty || targetUserId.value == AppSettings.userID;
@@ -146,8 +150,100 @@ class UserController extends GetxController {
   }
 
   void onChangePhoto() {
-    if (!canEdit) return;
-    Get.snackbar('Info', 'Fitur unggah foto belum tersedia di Flutter.');
+    if (!canEdit || isUploadingPhoto.value) return;
+    if (isOffline.value) {
+      Get.snackbar('Info', 'Tidak ada koneksi internet.');
+      return;
+    }
+    _promptPhotoSource();
+  }
+
+  Future<void> _promptPhotoSource() async {
+    final source = await Get.dialog<ImageSource>(
+      AlertDialog(
+        title: const Text('Unggah foto'),
+        content: const Text('Pilih sumber foto yang ingin digunakan.'),
+        actions: [
+          TextButton(
+            onPressed: () => Get.back(result: ImageSource.camera),
+            child: const Text('KAMERA'),
+          ),
+          TextButton(
+            onPressed: () => Get.back(result: ImageSource.gallery),
+            child: const Text('GALERI'),
+          ),
+          TextButton(
+            onPressed: () => Get.back(result: null),
+            child: const Text('BATAL'),
+          ),
+        ],
+      ),
+    );
+
+    if (source == null) return;
+
+    try {
+      final picked = await _imagePicker.pickImage(
+        source: source,
+        maxWidth: 1024,
+        imageQuality: 85,
+      );
+      if (picked == null) return;
+      await _uploadPhoto(File(picked.path));
+    } catch (e) {
+      Get.snackbar('Error', 'Tidak dapat memilih foto: $e');
+    }
+  }
+
+  Future<void> _uploadPhoto(File file) async {
+    if (AppSettings.userID.isEmpty) {
+      Get.snackbar('Error', 'Session tidak valid.');
+      return;
+    }
+    try {
+      isUploadingPhoto.value = true;
+      update();
+      final bytes = await file.readAsBytes();
+      final base64Photo = base64Encode(bytes);
+
+      final response = await _dio.post(
+        AppSettings.URL_EDIT_PHOTO,
+        data: FormData.fromMap({
+          'userID': AppSettings.userID,
+          'photo': base64Photo,
+        }),
+        options: Options(contentType: Headers.formUrlEncodedContentType),
+      );
+
+      Map<String, dynamic>? jsonMap;
+      final raw = response.data;
+      if (raw is Map<String, dynamic>) {
+        jsonMap = raw;
+      } else if (raw is String) {
+        jsonMap = jsonDecode(raw) as Map<String, dynamic>?;
+      }
+
+      int? errCode;
+      String errMsg = '';
+      if (jsonMap != null) {
+        final code = jsonMap['err_code'] ?? jsonMap['errCode'];
+        if (code is int) errCode = code;
+        if (code is String) errCode = int.tryParse(code);
+        errMsg = (jsonMap['err_msg'] ?? jsonMap['errMsg'])?.toString() ?? '';
+      }
+
+      if (errCode == AppSettings.SUCCESS_CODE) {
+        Get.snackbar('Sukses', errMsg.isEmpty ? 'Foto berhasil diperbarui.' : errMsg);
+        await loadUserData();
+      } else {
+        Get.snackbar('Gagal', errMsg.isEmpty ? 'Tidak dapat memperbarui foto.' : errMsg);
+      }
+    } catch (e) {
+      Get.snackbar('Error', 'Tidak dapat mengunggah foto: $e');
+    } finally {
+      isUploadingPhoto.value = false;
+      update();
+    }
   }
 
   Future<void> onCall() async {
