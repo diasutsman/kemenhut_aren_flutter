@@ -56,11 +56,13 @@ class ServiceCenterController extends GetxController {
       Iterable<dynamic> rawItems = const [];
       if (data is Map<String, dynamic>) {
         // Legacy Android relies on err_code to guard success.
-        final errCode = data['err_code'] ?? data['errCode'] ?? response.statusCode;
+        final errCode =
+            data['err_code'] ?? data['errCode'] ?? response.statusCode;
         if (errCode == AppSettings.SUCCESS_CODE) {
           rawItems = (data['data'] as Iterable?) ?? const [];
         } else {
-          final errMsg = data['err_msg'] ?? data['errMsg'] ?? 'Data tidak tersedia';
+          final errMsg =
+              data['err_msg'] ?? data['errMsg'] ?? 'Data tidak tersedia';
           items.clear();
           Get.snackbar(
             'Info',
@@ -79,18 +81,16 @@ class ServiceCenterController extends GetxController {
       items
         ..clear()
         ..addAll(
-          rawItems
-              .map<ServiceCenterItem?>((dynamic e) {
-                if (e is ServiceCenterItem) return e;
-                if (e is Map<String, dynamic>) {
-                  return ServiceCenterItem.fromJson(e);
-                }
-                if (e is Map) {
-                  return ServiceCenterItem.fromJson(Map<String, dynamic>.from(e));
-                }
-                return null;
-              })
-              .whereType<ServiceCenterItem>(),
+          rawItems.map<ServiceCenterItem?>((dynamic e) {
+            if (e is ServiceCenterItem) return e;
+            if (e is Map<String, dynamic>) {
+              return ServiceCenterItem.fromJson(e);
+            }
+            if (e is Map) {
+              return ServiceCenterItem.fromJson(Map<String, dynamic>.from(e));
+            }
+            return null;
+          }).whereType<ServiceCenterItem>(),
         );
     } catch (e) {
       Get.snackbar(
@@ -155,7 +155,12 @@ class ServiceCenterController extends GetxController {
           label: 'UNDO',
           textColor: const Color(0xFFD62E49),
           onPressed: () {
-            restoreItem(context, removedItem, removedIndex, showSnackBar: false);
+            restoreItem(
+              context,
+              removedItem,
+              removedIndex,
+              showSnackBar: false,
+            );
           },
         ),
       ),
@@ -220,7 +225,7 @@ class ServiceCenterController extends GetxController {
     }
   }
 
-  void gotoDetail(ServiceCenterItem item) {
+  Future<void> gotoDetail(ServiceCenterItem item) async {
     if (item.idSupplier.isEmpty) {
       Get.snackbar(
         'Info',
@@ -229,10 +234,15 @@ class ServiceCenterController extends GetxController {
       );
       return;
     }
-    Get.toNamed(
+    final result = await Get.toNamed(
       AppRoutes.inventaris,
       arguments: {'id': item.idSupplier},
     );
+    if (result is Map) {
+      if (result['reload'] == true) {
+        await fetchServiceCenters();
+      }
+    }
   }
 
   int get itemCount => items.length;
