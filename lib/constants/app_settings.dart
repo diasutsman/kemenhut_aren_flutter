@@ -38,6 +38,10 @@ class AppSettings {
   static String URL_SERVICE_CENTER = "${URL_BASE}vendor/list";
   static String URL_AREN_REMOVE = "${URL_BASE}aren/remove";
   static String URL_AREN_RESTORE = "${URL_BASE}aren/undo";
+  static String URL_VIEW_PROFILE = "${URL_BASE}user/profile";
+  static String URL_EDIT_PROFILE = "${URL_BASE}user/editprofile";
+  static String URL_EDIT_PHOTO = "${URL_BASE}user/editphoto";
+  static String URL_CHANGE_PASSWORD = "${URL_BASE}user/changepwd";
   static String URL_VIEW_SPK = "${URL_BASE}response/spkno";
   static String URL_DETAIL_SPK = "${URL_BASE}response/viewspk";
   static String URL_KARYAWAN_LIST = "${URL_BASE}user/karyawan";
@@ -147,6 +151,15 @@ class AppSettings {
   static const int NOTIFICATION_ID_BIG_IMAGE = 101;
   static const String SHARED_PREF = "myFirebase";
   static const String FIREBASE_ID = "regId";
+
+  // ==================== USER FIELD IDENTIFIERS ====================
+  static const String FIELD_NAME = "name";
+  static const String FIELD_USERNAME = "username";
+  static const String FIELD_IDCARD = "idcard";
+  static const String FIELD_ADDRESS = "address";
+  static const String FIELD_EMAIL = "email";
+  static const String FIELD_GENDER = "gender";
+  static const String FIELD_PHONE = "phone";
 
   static const String ANDROID_MAIN = "android.intent.action.MAIN";
   static const String DETAIL_DATA = "android.intent.action.DETAIL_DATA";

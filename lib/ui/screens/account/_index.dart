@@ -1,2 +1,9 @@
 export 'controller/account_controller.dart';
+export 'controller/change_password_controller.dart';
+export 'controller/user_controller.dart';
+export 'controller/edit_user_controller.dart';
+export 'model/user_profile.dart';
 export 'screen/account_screen.dart';
+export 'screen/change_password_screen.dart';
+export 'screen/user_screen.dart';
+export 'screen/edit_user_screen.dart';

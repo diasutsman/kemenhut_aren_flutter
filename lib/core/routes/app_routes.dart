@@ -35,6 +35,26 @@ List<GetPage> pageRoutes = [
     transition: Transition.fadeIn,
   ),
   GetPage(
+    name: AppRoutes.profileDetail,
+    page: () => const UserScreen(),
+    transition: Transition.fadeIn,
+  ),
+  GetPage(
+    name: AppRoutes.userDetail,
+    page: () => const UserScreen(),
+    transition: Transition.fadeIn,
+  ),
+  GetPage(
+    name: AppRoutes.editUser,
+    page: () => const EditUserScreen(),
+    transition: Transition.fadeIn,
+  ),
+  GetPage(
+    name: AppRoutes.changePassword,
+    page: () => const ChangePasswordScreen(),
+    transition: Transition.fadeIn,
+  ),
+  GetPage(
     name: AppRoutes.about,
     page: () => const AboutScreen(),
     transition: Transition.fadeIn,

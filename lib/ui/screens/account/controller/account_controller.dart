@@ -1,45 +1,71 @@
 // lib/ui/screens/account/controller/account_controller.dart
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import 'package:kemenhut_aren_flutter/constants/_index.dart';
 
 class AccountController extends GetxController {
-  /// Navigate to My Profile screen
+  final isOffline = false.obs;
+  StreamSubscription<InternetStatus>? _connectionSub;
+
+  @override
+  void onInit() {
+    super.onInit();
+    _initConnectivityWatcher();
+  }
+
+  @override
+  void onClose() {
+    _connectionSub?.cancel();
+    super.onClose();
+  }
+
+  Future<void> _initConnectivityWatcher() async {
+    final checker = InternetConnection();
+    final hasConnection = await checker.hasInternetAccess;
+    isOffline.value = !hasConnection;
+    update();
+    _connectionSub = checker.onStatusChange.listen((status) {
+      isOffline.value = status == InternetStatus.disconnected;
+      update();
+    });
+  }
+
   void gotoProfile() {
-    Get.snackbar('Navigate', 'Opening My Profile...');
-    // Get.toNamed(AppRoutes.profileDetail);
+    Get.toNamed(AppRoutes.userDetail);
   }
 
-  /// Navigate to Change Password screen
   void gotoChangePassword() {
-    Get.snackbar('Navigate', 'Opening Change Password...');
-    // Get.toNamed(AppRoutes.changePassword);
+    Get.toNamed(AppRoutes.changePassword);
   }
 
-  /// Log out with confirmation dialog
-  void logout() {
-    Get.dialog(
+  Future<void> logout() async {
+    final confirmed = await Get.dialog<bool>(
       AlertDialog(
-        title: const Text('Logout'),
-        content:
-            const Text('Are you sure you want to sign out from this account?'),
+        content: const Text('Are you sure want to logout ?'),
         actions: [
           TextButton(
-            onPressed: Get.back,
-            child: const Text('Cancel'),
+            onPressed: () => Get.back(result: false),
+            child: const Text('NO', style: TextStyle(color: Color(0xFF2E7D32))),
           ),
-          ElevatedButton(
-            onPressed: () async {
-              await AppSettings.destroySession();
-              Get.offAllNamed(AppRoutes.login);
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFFE27D2B),
+          TextButton(
+            onPressed: () => Get.back(result: true),
+            child: const Text(
+              'YES',
+              style: TextStyle(color: Color(0xFF2E7D32)),
             ),
-            child: const Text('Logout'),
           ),
         ],
       ),
+      barrierDismissible: false,
     );
+
+    if (confirmed == true) {
+      await AppSettings.destroySession();
+      await AppSettings.destroyFcmToken();
+      Get.offAllNamed(AppRoutes.login);
+    }
   }
 }
