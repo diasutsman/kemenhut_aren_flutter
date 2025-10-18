@@ -61,17 +61,23 @@ class ProfileScreen extends StatelessWidget {
                     () =>
                         ctl.userPhoto.value.isNotEmpty
                             ? Image.network(
-                              ctl.userPhoto.value,
-                              width: 70,
-                              height: 70,
-                              fit: BoxFit.cover,
-                            )
+                                ctl.userPhoto.value,
+                                width: 70,
+                                height: 70,
+                                fit: BoxFit.cover,
+                                errorBuilder: (_, __, ___) => Image.asset(
+                                  'assets/drawable/default_user_icon.png',
+                                  width: 70,
+                                  height: 70,
+                                  fit: BoxFit.cover,
+                                ),
+                              )
                             : Image.asset(
-                              'assets/drawable/default_user_icon.png',
-                              width: 70,
-                              height: 70,
-                              fit: BoxFit.cover,
-                            ),
+                                'assets/drawable/default_user_icon.png',
+                                width: 70,
+                                height: 70,
+                                fit: BoxFit.cover,
+                              ),
                   ),
                 ),
                 const SizedBox(width: 12),

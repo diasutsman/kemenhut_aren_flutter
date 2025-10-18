@@ -46,19 +46,27 @@ class UserScreen extends StatelessWidget {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(60),
                                   child:
-                                      profile?.photo.isNotEmpty == true
+                                      profile?.photo.isNotEmpty == true &&
+                                              !controller.isOffline.value
                                           ? Image.network(
-                                            profile!.photo,
-                                            width: 96,
-                                            height: 96,
-                                            fit: BoxFit.cover,
-                                          )
+                                              profile!.photo,
+                                              width: 96,
+                                              height: 96,
+                                              fit: BoxFit.cover,
+                                              errorBuilder:
+                                                  (_, __, ___) => Image.asset(
+                                                'assets/drawable/default_user_icon.png',
+                                                width: 96,
+                                                height: 96,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            )
                                           : Image.asset(
-                                            'assets/drawable/default_user_icon.png',
-                                            width: 96,
-                                            height: 96,
-                                            fit: BoxFit.cover,
-                                          ),
+                                              'assets/drawable/default_user_icon.png',
+                                              width: 96,
+                                              height: 96,
+                                              fit: BoxFit.cover,
+                                            ),
                                 ),
                               ),
                               if (controller.canEdit)
