@@ -24,7 +24,7 @@ class ProfileController extends GetxController {
   }
 
   void gotoInvHist() {
-    Get.snackbar('Navigate', 'Opening My Report page...');
+    Get.toNamed(AppRoutes.serviceCenter);
   }
 
   void gotoAccount() {
