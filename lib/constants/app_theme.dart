@@ -10,7 +10,19 @@ class AppTheme {
       primary: AppColor.maroon,
       secondary: AppColor.maroon,
     ),
-    appBarTheme: const AppBarTheme(scrolledUnderElevation: 0.0),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Color(0xFFB7997A),
+      foregroundColor: Colors.white,
+      scrolledUnderElevation: 0.0,
+      elevation: 0,
+      iconTheme: IconThemeData(color: Colors.white),
+      actionsIconTheme: IconThemeData(color: Colors.white),
+      titleTextStyle: TextStyle(
+        color: Colors.white,
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
         backgroundColor: const WidgetStatePropertyAll(AppColor.maroon),
