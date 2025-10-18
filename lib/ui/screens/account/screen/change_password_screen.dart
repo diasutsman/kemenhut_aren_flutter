@@ -56,17 +56,19 @@ class ChangePasswordScreen extends StatelessWidget {
                     () => SizedBox(
                       height: 48,
                       child: ElevatedButton.icon(
-                        icon: controller.isLoading.value
-                            ? const SizedBox(
-                                width: 18,
-                                height: 18,
-                                child: CircularProgressIndicator(
-                                  strokeWidth: 2,
-                                  valueColor:
-                                      AlwaysStoppedAnimation<Color>(Colors.white),
-                                ),
-                              )
-                            : const Icon(Icons.lock_outline),
+                        icon:
+                            controller.isLoading.value
+                                ? const SizedBox(
+                                  width: 18,
+                                  height: 18,
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                      Colors.white,
+                                    ),
+                                  ),
+                                )
+                                : const Icon(Icons.lock_outline),
                         label: const Text(
                           'Change Password',
                           style: TextStyle(
@@ -75,10 +77,12 @@ class ChangePasswordScreen extends StatelessWidget {
                           ),
                         ),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF4D918E),
+                          // backgroundColor: const Color(0xFF4D918E),
                         ),
                         onPressed:
-                            controller.isLoading.value ? null : controller.submit,
+                            controller.isLoading.value
+                                ? null
+                                : controller.submit,
                       ),
                     ),
                   ),
@@ -97,9 +101,10 @@ class ChangePasswordScreen extends StatelessWidget {
                 ),
               ),
               Obx(
-                () => controller.isLoading.value
-                    ? const _LoadingOverlay()
-                    : const SizedBox.shrink(),
+                () =>
+                    controller.isLoading.value
+                        ? const _LoadingOverlay()
+                        : const SizedBox.shrink(),
               ),
             ],
           ),
@@ -110,11 +115,7 @@ class ChangePasswordScreen extends StatelessWidget {
 }
 
 class _Section extends StatelessWidget {
-  const _Section({
-    required this.title,
-    this.subtitle,
-    required this.child,
-  });
+  const _Section({required this.title, this.subtitle, required this.child});
 
   final String title;
   final String? subtitle;
@@ -139,10 +140,7 @@ class _Section extends StatelessWidget {
             const SizedBox(height: 6),
             Text(
               subtitle!,
-              style: const TextStyle(
-                fontSize: 13,
-                color: Colors.black54,
-              ),
+              style: const TextStyle(fontSize: 13, color: Colors.black54),
             ),
           ],
           const SizedBox(height: 12),
@@ -154,10 +152,7 @@ class _Section extends StatelessWidget {
 }
 
 class _PasswordField extends StatelessWidget {
-  const _PasswordField({
-    required this.controller,
-    required this.hint,
-  });
+  const _PasswordField({required this.controller, required this.hint});
 
   final TextEditingController controller;
   final String hint;
@@ -169,9 +164,7 @@ class _PasswordField extends StatelessWidget {
       obscureText: true,
       decoration: InputDecoration(
         hintText: hint,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 16,
           vertical: 12,
@@ -192,10 +185,7 @@ class _NoConnectivityBanner extends StatelessWidget {
       child: const Text(
         'No Internet Connection',
         textAlign: TextAlign.center,
-        style: TextStyle(
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-        ),
+        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
       ),
     );
   }

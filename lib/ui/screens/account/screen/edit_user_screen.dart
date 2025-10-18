@@ -43,8 +43,7 @@ class EditUserScreen extends StatelessWidget {
                   if (controller.showIdCard) ...[
                     const _SectionIntro(
                       title: 'Nomor Identitas',
-                      subtitle:
-                          'Lengkapi nomor KTP Anda sesuai data resmi.',
+                      subtitle: 'Lengkapi nomor KTP Anda sesuai data resmi.',
                     ),
                     _TextField(
                       controller: controller.idCardCtrl,
@@ -75,8 +74,10 @@ class EditUserScreen extends StatelessWidget {
                         },
                         decoration: const InputDecoration(
                           border: OutlineInputBorder(),
-                          contentPadding:
-                              EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                          contentPadding: EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 10,
+                          ),
                         ),
                       ),
                     ),
@@ -143,7 +144,7 @@ class EditUserScreen extends StatelessWidget {
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF4D918E),
+                        // backgroundColor: const Color(0xFF4D918E),
                       ),
                       onPressed: controller.submit,
                     ),
@@ -162,8 +163,7 @@ class EditUserScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              if (controller.isLoading.value)
-                const _LoadingOverlay(),
+              if (controller.isLoading.value) const _LoadingOverlay(),
             ],
           ),
         );
@@ -196,10 +196,7 @@ class _SectionIntro extends StatelessWidget {
         Text(
           subtitle,
           textAlign: TextAlign.center,
-          style: const TextStyle(
-            fontSize: 14,
-            color: Colors.black54,
-          ),
+          style: const TextStyle(fontSize: 14, color: Colors.black54),
         ),
         const SizedBox(height: 16),
       ],
@@ -228,9 +225,7 @@ class _TextField extends StatelessWidget {
       keyboardType: keyboardType,
       decoration: InputDecoration(
         hintText: hint,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 16,
           vertical: 12,
@@ -251,10 +246,7 @@ class _NoConnectivityBanner extends StatelessWidget {
       child: const Text(
         'No Internet Connection',
         textAlign: TextAlign.center,
-        style: TextStyle(
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-        ),
+        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
       ),
     );
   }

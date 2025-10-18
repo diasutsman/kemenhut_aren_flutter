@@ -23,7 +23,7 @@ class InventarisScreen extends StatelessWidget {
             appBar: PreferredSize(
               preferredSize: const Size.fromHeight(100),
               child: AppBar(
-                backgroundColor: const Color(0xFF4D918E), // primary green tone
+                // backgroundColor: const Color(0xFF4D918E), // primary green tone
                 elevation: 0,
                 centerTitle: true,
                 title: const Text(
@@ -57,17 +57,18 @@ class InventarisScreen extends StatelessWidget {
             body: Column(
               children: [
                 Expanded(
-                  child: ctl.isLoading.value
-                      ? const Center(child: CircularProgressIndicator())
-                      : const TabBarView(
-                          children: [
-                            IdentitasScreen(),
-                            ProduksiScreen(),
-                            LingkunganScreen(),
-                            ProductScreen(),
-                            ProsesScreen(),
-                          ],
-                        ),
+                  child:
+                      ctl.isLoading.value
+                          ? const Center(child: CircularProgressIndicator())
+                          : const TabBarView(
+                            children: [
+                              IdentitasScreen(),
+                              ProduksiScreen(),
+                              LingkunganScreen(),
+                              ProductScreen(),
+                              ProsesScreen(),
+                            ],
+                          ),
                 ),
 
                 // --- bottom button ---
@@ -88,17 +89,19 @@ class InventarisScreen extends StatelessWidget {
                     vertical: 10,
                   ),
                   child: ElevatedButton.icon(
-                    icon: ctl.isSaving.value
-                        ? const SizedBox(
-                            height: 18,
-                            width: 18,
-                            child: CircularProgressIndicator(
-                              strokeWidth: 2,
-                              valueColor:
-                                  AlwaysStoppedAnimation<Color>(Colors.white),
-                            ),
-                          )
-                        : const Icon(Icons.save, color: Colors.white),
+                    icon:
+                        ctl.isSaving.value
+                            ? const SizedBox(
+                              height: 18,
+                              width: 18,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  Colors.white,
+                                ),
+                              ),
+                            )
+                            : const Icon(Icons.save, color: Colors.white),
                     label: const Text(
                       'Simpan Data',
                       style: TextStyle(

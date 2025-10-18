@@ -18,9 +18,10 @@ class IdentitasScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<IdentitasController>(
-      init: Get.isRegistered<IdentitasController>()
-          ? Get.find<IdentitasController>()
-          : IdentitasController(),
+      init:
+          Get.isRegistered<IdentitasController>()
+              ? Get.find<IdentitasController>()
+              : IdentitasController(),
       autoRemove: false,
       builder: (controller) {
         return Container(
@@ -176,9 +177,15 @@ class IdentitasScreen extends StatelessWidget {
                   controller: controller,
                   heading: 'Topografi',
                   items: const [
-                    _CheckboxItem('kemiringanCuramSekali', 'Curam Sekali (> 40°)'),
+                    _CheckboxItem(
+                      'kemiringanCuramSekali',
+                      'Curam Sekali (> 40°)',
+                    ),
                     _CheckboxItem('kemiringanCuram', 'Curam (30° - 40°)'),
-                    _CheckboxItem('kemiringanAgakCuram', 'Agak Curam (15° - 30°)'),
+                    _CheckboxItem(
+                      'kemiringanAgakCuram',
+                      'Agak Curam (15° - 30°)',
+                    ),
                     _CheckboxItem('kemiringanDatar', 'Datar (< 15°)'),
                   ],
                 ),
@@ -189,8 +196,7 @@ class IdentitasScreen extends StatelessWidget {
                     _CheckboxItem('posisiKanan', 'Kanan'),
                     _CheckboxItem('posisiKiri', 'Kiri'),
                     _CheckboxItem('posisiTengah', 'Tengah'),
-                    _CheckboxItem(
-                        'posisiKeluar', 'Keluar terbelah di tengah'),
+                    _CheckboxItem('posisiKeluar', 'Keluar terbelah di tengah'),
                   ],
                 ),
                 _buildCheckboxColumn(
@@ -198,7 +204,10 @@ class IdentitasScreen extends StatelessWidget {
                   heading: 'Kondisi bunga mayang saat dijatuhkan',
                   items: const [
                     _CheckboxItem('bungaMerah', 'Bunga merah'),
-                    _CheckboxItem('bungaMerahKuning', 'Bunga merah campur kuning'),
+                    _CheckboxItem(
+                      'bungaMerahKuning',
+                      'Bunga merah campur kuning',
+                    ),
                     _CheckboxItem('bungaKuning', 'Bunga Kuning'),
                     _CheckboxItem('bungaBerlemak', 'Bunga berlemak'),
                     _CheckboxItem('bungaBerharum', 'Bunga Berharum'),
@@ -210,9 +219,10 @@ class IdentitasScreen extends StatelessWidget {
                   items: const [
                     _CheckboxItem('perlakuanSinombor', 'Olah mudah (sinombor)'),
                     _CheckboxItem(
-                        'perlakuanPinakakiit', 'Sesuai prosedur (pinakakiit)'),
-                    _CheckboxItem(
-                        'perlakuanDiayun', 'Diayun kekiri / kekanan'),
+                      'perlakuanPinakakiit',
+                      'Sesuai prosedur (pinakakiit)',
+                    ),
+                    _CheckboxItem('perlakuanDiayun', 'Diayun kekiri / kekanan'),
                     _CheckboxItem('perlakuanLain', 'Perlakukan lain'),
                   ],
                 ),
@@ -236,8 +246,7 @@ class IdentitasScreen extends StatelessWidget {
                   label: 'Berapa total pengetukan?',
                   child: _textField(
                     controller: controller.jumlahPengetukkanCtrl,
-                    hintText:
-                        'Jumlah pengetukkan sampai mayang dipotong..',
+                    hintText: 'Jumlah pengetukkan sampai mayang dipotong..',
                     keyboardType: TextInputType.number,
                   ),
                 ),
@@ -274,31 +283,26 @@ class IdentitasScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         child: SizedBox(
           height: 200,
-          child: Obx(
-            () {
-              final marker = controller.currentMarker.value;
-              return GoogleMap(
-                initialCameraPosition: CameraPosition(
-                  target: controller.mapCenter.value,
-                  zoom: controller.mapZoom.value,
-                ),
-                onMapCreated: controller.onMapCreated,
-                myLocationEnabled: controller.locationPermissionGranted.value,
-                myLocationButtonEnabled: true,
-                zoomControlsEnabled: false,
-                markers: marker != null ? {marker} : <Marker>{},
-              );
-            },
-          ),
+          child: Obx(() {
+            final marker = controller.currentMarker.value;
+            return GoogleMap(
+              initialCameraPosition: CameraPosition(
+                target: controller.mapCenter.value,
+                zoom: controller.mapZoom.value,
+              ),
+              onMapCreated: controller.onMapCreated,
+              myLocationEnabled: controller.locationPermissionGranted.value,
+              myLocationButtonEnabled: true,
+              zoomControlsEnabled: false,
+              markers: marker != null ? {marker} : <Marker>{},
+            );
+          }),
         ),
       ),
     );
   }
 
-  Widget _buildDateRow(
-    BuildContext context,
-    IdentitasController controller,
-  ) {
+  Widget _buildDateRow(BuildContext context, IdentitasController controller) {
     return _frame(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -338,7 +342,7 @@ class IdentitasScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      backgroundColor: const Color(0xFF4D918E),
+                      // backgroundColor: const Color(0xFF4D918E),
                     ),
                     child: const Icon(Icons.calendar_month, size: 18),
                   ),
@@ -374,17 +378,19 @@ class IdentitasScreen extends StatelessWidget {
             flex: 3,
             child: Obx(
               () => DropdownButtonFormField<String>(
-                value: value.value != null && items.contains(value.value)
-                    ? value.value
-                    : null,
-                items: items
-                    .map(
-                      (item) => DropdownMenuItem<String>(
-                        value: item,
-                        child: Text(item),
-                      ),
-                    )
-                    .toList(),
+                value:
+                    value.value != null && items.contains(value.value)
+                        ? value.value
+                        : null,
+                items:
+                    items
+                        .map(
+                          (item) => DropdownMenuItem<String>(
+                            value: item,
+                            child: Text(item),
+                          ),
+                        )
+                        .toList(),
                 onChanged: (selected) => value.value = selected,
                 decoration: const InputDecoration(
                   isDense: true,
@@ -479,72 +485,68 @@ class IdentitasScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 8),
-          Obx(
-            () {
-              if (controller.remoteImageUrl.value != null &&
-                  controller.remoteImageUrl.value!.isNotEmpty &&
-                  controller.pickedImage.value == null) {
-                return _attachmentAction(
-                  icon: Icons.image_search,
-                  label: 'Lihat Gambar',
-                  onTap: controller.viewAttachment,
-                  accentColor: const Color(0xFF4D918E),
-                );
-              }
-              return const SizedBox.shrink();
-            },
-          ),
+          Obx(() {
+            if (controller.remoteImageUrl.value != null &&
+                controller.remoteImageUrl.value!.isNotEmpty &&
+                controller.pickedImage.value == null) {
+              return _attachmentAction(
+                icon: Icons.image_search,
+                label: 'Lihat Gambar',
+                onTap: controller.viewAttachment,
+                accentColor: const Color(0xFF4D918E),
+              );
+            }
+            return const SizedBox.shrink();
+          }),
           _attachmentAction(
             icon: Icons.attachment,
             label: 'Tambah Lampiran',
             onTap: controller.chooseImage,
           ),
           const SizedBox(height: 8),
-          Obx(
-            () {
-              final picked = controller.pickedImage.value;
-              if (picked == null) return const SizedBox.shrink();
-              return Container(
-                decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0xFFDEDEDE)),
-                  borderRadius: BorderRadius.circular(8),
-                  color: Colors.white,
-                ),
-                padding: const EdgeInsets.all(12),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 56,
-                      height: 56,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        color: const Color(0xFFEEEEEE),
-                        image: DecorationImage(
-                          image: FileImage(File(picked.path)),
-                          fit: BoxFit.cover,
-                        ),
+          Obx(() {
+            final picked = controller.pickedImage.value;
+            if (picked == null) return const SizedBox.shrink();
+            return Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: const Color(0xFFDEDEDE)),
+                borderRadius: BorderRadius.circular(8),
+                color: Colors.white,
+              ),
+              padding: const EdgeInsets.all(12),
+              child: Row(
+                children: [
+                  Container(
+                    width: 56,
+                    height: 56,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: const Color(0xFFEEEEEE),
+                      image: DecorationImage(
+                        image: FileImage(File(picked.path)),
+                        fit: BoxFit.cover,
                       ),
                     ),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: Text(
-                        controller.attachmentName.value,
-                        style: const TextStyle(fontWeight: FontWeight.w600),
-                      ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Text(
+                      controller.attachmentName.value,
+                      style: const TextStyle(fontWeight: FontWeight.w600),
                     ),
-                    IconButton(
-                      icon: const Icon(Icons.remove_circle_outline),
-                      onPressed: controller.removeAttachment,
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.visibility),
-                      onPressed: controller.viewAttachment,
-                    ),
-                  ],
-                ),
-              );
-            },
-          ),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.remove_circle_outline),
+                    onPressed: controller.removeAttachment,
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.visibility),
+                    onPressed: controller.viewAttachment,
+                  ),
+                ],
+              ),
+            );
+          }),
         ],
       ),
     );
@@ -571,10 +573,7 @@ class IdentitasScreen extends StatelessWidget {
             const SizedBox(width: 12),
             Text(
               label,
-              style: TextStyle(
-                color: accentColor,
-                fontWeight: FontWeight.w600,
-              ),
+              style: TextStyle(color: accentColor, fontWeight: FontWeight.w600),
             ),
           ],
         ),
@@ -582,10 +581,7 @@ class IdentitasScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildTextRow({
-    required String label,
-    required Widget child,
-  }) {
+  Widget _buildTextRow({required String label, required Widget child}) {
     return _frame(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -609,17 +605,14 @@ class IdentitasScreen extends StatelessWidget {
   Widget _frame({required Widget child, EdgeInsets? padding}) {
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
-      padding: padding ?? const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+      padding:
+          padding ?? const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
         border: Border.all(color: const Color(0xFFDEDEDE)),
         boxShadow: const [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 4,
-            offset: Offset(0, 2),
-          ),
+          BoxShadow(color: Colors.black12, blurRadius: 4, offset: Offset(0, 2)),
         ],
       ),
       child: child,
@@ -637,9 +630,7 @@ class IdentitasScreen extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         isDense: true,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
       ),
     );
   }
