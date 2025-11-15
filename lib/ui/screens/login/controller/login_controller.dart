@@ -167,7 +167,7 @@ class LoginController extends GetxController {
 
   void gotoForgot() {
     // Get.to(() => const ForgotScreen());
-    Get.offAndToNamed(AppRoutes.forgot);
+    Get.toNamed(AppRoutes.forgot);
   }
 
   void _gotoHome() {

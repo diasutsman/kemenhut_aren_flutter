@@ -1,205 +1,153 @@
-// lib/screens/login_screen.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kemenhut_aren_flutter/ui/screens/_index.dart';
+import 'package:kemenhut_aren_flutter/ui/screens/login/controller/login_controller.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
+  static const Color _buttonGreen = Color(0xFF79C3A0);
+  static const Color _dividerColor = Color(0xFFBDBDBD);
+
   @override
   Widget build(BuildContext context) {
-    // Colors and sizes chosen to match the XML & screenshot
-    final theme = Theme.of(context);
-    const greenButton = Color(0xFF79C3A0); // soft green per screenshot
-    const darkGray = Color(0xFF9E9E9E);
+    final bottomPadding = MediaQuery.of(context).padding.bottom;
 
     return GetBuilder<LoginController>(
       init: LoginController(),
       builder: (controller) {
         return Scaffold(
           backgroundColor: Colors.white,
-          body: Stack(
-            children: [
-              // ======= Header (FrameLayout with background & logo) =======
-              SizedBox(
-                width: double.infinity,
-                height: 320,
-                child: Stack(
-                  fit: StackFit.expand,
+          body: SafeArea(
+            top: false,
+            child: Stack(
+              children: [
+                Column(
                   children: [
-                    // Background image that resembles "bg_packaging" (sand + palms)
-                    Image.asset(
-                      'assets/drawable/bg_packaging.png', // provide your own image
-                      fit: BoxFit.cover,
-                    ),
-                    // Logo centered at top
-                    Align(
-                      alignment: Alignment.topCenter,
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 72),
-                        child: Image.asset(
-                          'assets/drawable/logo_pnp.png', // provide your logo
-                          width: 160,
-                          height: 120,
-                          fit: BoxFit.contain,
+                    const _LoginHeader(),
+                    Expanded(
+                      child: SingleChildScrollView(
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            const SizedBox(height: 32),
+                            _InputWithLeftIcon(
+                              controller: controller.usernameCtrl,
+                              hintText: 'Username / Email..',
+                              assetIcon: 'assets/drawable/email_icon.png',
+                            ),
+                            const SizedBox(height: 16),
+                            Stack(
+                              alignment: Alignment.centerRight,
+                              children: [
+                                _InputWithLeftIcon(
+                                  controller: controller.passwordCtrl,
+                                  hintText: 'Password..',
+                                  assetIcon: 'assets/drawable/lock_icon.png',
+                                  obscure: true,
+                                  contentPaddingRight: 90,
+                                ),
+                                TextButton(
+                                  onPressed: controller.gotoForgot,
+                                  style: TextButton.styleFrom(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 16,
+                                    ),
+                                  ),
+                                  child: const Text(
+                                    'Forgot ?',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Color(0xFF4EAA84),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 16),
+                            SizedBox(
+                              height: 54,
+                              child: ElevatedButton(
+                                onPressed: controller.login,
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: _buttonGreen,
+                                  foregroundColor: Colors.white,
+                                  elevation: 0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(28),
+                                  ),
+                                  textStyle: const TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                child: const Text('Sign In'),
+                              ),
+                            ),
+                            const SizedBox(height: 28),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    height: 1,
+                                    color: _dividerColor,
+                                  ),
+                                ),
+                                const Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 12),
+                                  child: Text(
+                                    'Account is given by Administrator',
+                                    style: TextStyle(color: Colors.black),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Container(
+                                    height: 1,
+                                    color: _dividerColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 120 + bottomPadding),
+                          ],
                         ),
                       ),
                     ),
                   ],
                 ),
-              ),
-
-              // ======= Form Panel =======
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SingleChildScrollView(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Column(
-                      children: [
-                        const SizedBox(height: 350),
-                        // pnlLogin
-                        Container(
-                          width: double.infinity,
-                          padding: const EdgeInsets.all(16),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              // Username
-                              _InputWithLeftIcon(
-                                controller: controller.usernameCtrl,
-                                hintText: 'Username / Email..',
-                                assetIcon: 'assets/drawable/email_icon.png',
-                              ),
-                              const SizedBox(height: 12),
-                              // Password + "Forgot ?"
-                              Stack(
-                                alignment: Alignment.centerRight,
-                                children: [
-                                  _InputWithLeftIcon(
-                                    controller: controller.passwordCtrl,
-                                    hintText: 'Password..',
-                                    assetIcon: 'assets/drawable/lock_icon.png',
-                                    obscure: true,
-                                    contentPaddingRight: 84,
-                                  ),
-                                  TextButton(
-                                    onPressed: controller.gotoForgot,
-                                    child: const Text(
-                                      'Forgot ?',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-
-                              const SizedBox(height: 8),
-
-                              // Sign In Button
-                              SizedBox(
-                                height: 56,
-                                child: ElevatedButton(
-                                  onPressed: controller.login,
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: greenButton,
-                                    foregroundColor: Colors.white,
-                                    elevation: 0,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(28),
-                                    ),
-                                    textStyle: const TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  child: const Text('Sign In'),
-                                ),
-                              ),
-
-                              const SizedBox(height: 16),
-
-                              // Divider + "Sign in with" (matches XML; buttons not included)
-                              Row(
-                                children: [
-                                  Expanded(
-                                    child: Container(
-                                      height: 1,
-                                      color: darkGray,
-                                    ),
-                                  ),
-                                  const Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 12,
-                                    ),
-                                    child: Text(
-                                      'Account is given by Administrator',
-                                      style: TextStyle(color: Colors.black),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Container(
-                                      height: 1,
-                                      color: darkGray,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
+                Positioned(
+                  left: 24,
+                  right: 24,
+                  bottom: bottomPadding + 24,
+                  child: Row(
+                    children: [
+                      const Expanded(
+                        child: Text(
+                          "Don't have account ?",
+                          textAlign: TextAlign.right,
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ),
+                      const SizedBox(width: 16),
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: const Text(
+                            'Contact Admin',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              color: Color(0xFF4EAA84),
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-
-                  Column(
-                    children: [
-                      Row(
-                        children: [
-                          const Expanded(
-                            child: Text(
-                              "Don't have account ?",
-                              textAlign: TextAlign.right,
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ),
-                          const SizedBox(width: 16),
-                          Expanded(
-                            child: GestureDetector(
-                              onTap: () {},
-                              child: Text(
-                                'Contact Admin',
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                  color: theme.colorScheme.primary,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
                       ),
-
-                      // const SizedBox(height: 100),
                     ],
                   ),
-                ],
-              ),
-
-              // ======= Footer: "Don't have account ?  Contact Admin" =======
-              // Positioned(
-              //   bottom: 32,
-              //   left: 20,
-              //   right: 20,
-              //   child:
-              // ),
-
-              // ======= Loading overlay (include/progress) =======
-              Obx(
-                () =>
-                    controller.isLoading.value
-                        ? Container(
+                ),
+                Obx(
+                  () => controller.isLoading.value
+                      ? Container(
                           color: Colors.black.withOpacity(0.25),
                           child: const Center(
                             child: SizedBox(
@@ -209,9 +157,10 @@ class LoginScreen extends StatelessWidget {
                             ),
                           ),
                         )
-                        : const SizedBox.shrink(),
-              ),
-            ],
+                      : const SizedBox.shrink(),
+                ),
+              ],
+            ),
           ),
         );
       },
@@ -219,7 +168,39 @@ class LoginScreen extends StatelessWidget {
   }
 }
 
-// Matches the XML EditText + drawableLeft + rounded border
+class _LoginHeader extends StatelessWidget {
+  const _LoginHeader();
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 260,
+      width: double.infinity,
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          Image.asset(
+            'assets/drawable/bg_packaging.png',
+            fit: BoxFit.cover,
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 24),
+              child: Image.asset(
+                'assets/drawable/logo.png',
+                width: 200,
+                height: 120,
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class _InputWithLeftIcon extends StatelessWidget {
   const _InputWithLeftIcon({
     required this.controller,
@@ -242,8 +223,10 @@ class _InputWithLeftIcon extends StatelessWidget {
       obscureText: obscure,
       decoration: InputDecoration(
         hintText: hintText,
+        filled: true,
+        fillColor: Colors.white,
         prefixIcon: Padding(
-          padding: const EdgeInsetsDirectional.only(start: 12, end: 8),
+          padding: const EdgeInsetsDirectional.only(start: 12, end: 10),
           child: Image.asset(
             assetIcon,
             width: 22,
@@ -256,7 +239,9 @@ class _InputWithLeftIcon extends StatelessWidget {
           minHeight: 44,
         ),
         contentPadding: EdgeInsets.fromLTRB(16, 14, contentPaddingRight, 14),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(color: Color(0xFFBDBDBD)),
